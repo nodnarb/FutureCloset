@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CBA2843169E24F4004D729B /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2840169E24F4004D729B /* Common.framework */; };
-		1CBA2844169E24F4004D729B /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2841169E24F4004D729B /* FYX.framework */; };
-		1CBA2845169E24F4004D729B /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2842169E24F4004D729B /* NetworkServices.framework */; };
 		9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07244E15FFCA030014E147 /* CoreBluetooth.framework */; };
 		9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245015FFCA0A0014E147 /* CoreLocation.framework */; };
 		9A07245315FFCA490014E147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245215FFCA490014E147 /* Security.framework */; };
@@ -106,12 +103,12 @@
 		C002FFB21795F3E7000CBADE /* Transmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = C002FF3C1795F3E7000CBADE /* Transmitter.m */; };
 		C002FFB31795F3E7000CBADE /* UserSettingsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = C002FF3E1795F3E7000CBADE /* UserSettingsRepository.m */; };
 		C07F711C17285CF50051F55D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C07F711A17285BF00051F55D /* libz.dylib */; };
+		CA2864251878D68100AF92D8 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2864241878D68100AF92D8 /* FYX.framework */; };
+		CA2864271878D6A100AF92D8 /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2864261878D6A100AF92D8 /* NetworkServices.framework */; };
+		CA2864291878D6B300AF92D8 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2864281878D6B300AF92D8 /* Common.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CBA2840169E24F4004D729B /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = "../../Frameworks/Common.embeddedframework/Common.framework"; sourceTree = "<group>"; };
-		1CBA2841169E24F4004D729B /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = "../../Frameworks/FYX.framework"; sourceTree = "<group>"; };
-		1CBA2842169E24F4004D729B /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = "../../Frameworks/NetworkServices.embeddedframework/NetworkServices.framework"; sourceTree = "<group>"; };
 		9A07244E15FFCA030014E147 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		9A07245015FFCA0A0014E147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A07245215FFCA490014E147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -223,6 +220,9 @@
 		C002FF431795F3E7000CBADE /* ProximitySampleAppTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProximitySampleAppTests.h; sourceTree = "<group>"; };
 		C002FF441795F3E7000CBADE /* ProximitySampleAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProximitySampleAppTests.m; sourceTree = "<group>"; };
 		C07F711A17285BF00051F55D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CA2864241878D68100AF92D8 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FYX.framework; sourceTree = "<group>"; };
+		CA2864261878D6A100AF92D8 /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		CA2864281878D6B300AF92D8 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,10 +230,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2864291878D6B300AF92D8 /* Common.framework in Frameworks */,
 				C07F711C17285CF50051F55D /* libz.dylib in Frameworks */,
-				1CBA2843169E24F4004D729B /* Common.framework in Frameworks */,
-				1CBA2845169E24F4004D729B /* NetworkServices.framework in Frameworks */,
-				1CBA2844169E24F4004D729B /* FYX.framework in Frameworks */,
+				CA2864271878D6A100AF92D8 /* NetworkServices.framework in Frameworks */,
+				CA2864251878D68100AF92D8 /* FYX.framework in Frameworks */,
 				9A07245315FFCA490014E147 /* Security.framework in Frameworks */,
 				9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */,
 				9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */,
@@ -268,9 +268,9 @@
 		9A89197A15FFBEE400556B6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1CBA2840169E24F4004D729B /* Common.framework */,
-				1CBA2841169E24F4004D729B /* FYX.framework */,
-				1CBA2842169E24F4004D729B /* NetworkServices.framework */,
+				CA2864281878D6B300AF92D8 /* Common.framework */,
+				CA2864261878D6A100AF92D8 /* NetworkServices.framework */,
+				CA2864241878D68100AF92D8 /* FYX.framework */,
 				9A07245215FFCA490014E147 /* Security.framework */,
 				9A07245015FFCA0A0014E147 /* CoreLocation.framework */,
 				9A07244E15FFCA030014E147 /* CoreBluetooth.framework */,
@@ -474,6 +474,11 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Qualcomm Retail Solutions, Inc";
+				TargetAttributes = {
+					9A89197615FFBEE400556B6F = {
+						DevelopmentTeam = U92PM5JGJC;
+					};
+				};
 			};
 			buildConfigurationList = 9A89197115FFBEE400556B6F /* Build configuration list for PBXProject "ProximitySampleApp-withFrameworks" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -691,15 +696,22 @@
 		9A8919AE15FFBEE400556B6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks\"","\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"","\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
+					"\\\"$(SRCROOT)/../../Frameworks\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\\\"",
+					/Users/brandon/Projects/FutureCloset/FutureHamper,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
 				INFOPLIST_FILE = "ProximitySampleApp/ProximitySampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -708,15 +720,22 @@
 		9A8919AF15FFBEE400556B6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks\"","\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"","\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
+					"\\\"$(SRCROOT)/../../Frameworks\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\\\"",
+					/Users/brandon/Projects/FutureCloset/FutureHamper,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
 				INFOPLIST_FILE = "ProximitySampleApp/ProximitySampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
