@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "UIImageView+WebCache.h"
+#import "Clothing.h"
 
 
 const NSString *kWundergroundKey = @"7f816bcd9405569f";
@@ -18,6 +19,7 @@ const NSString *kWundergroundKey = @"7f816bcd9405569f";
     CLLocationManager *locationManager;
     UIActivityIndicatorView *activityIndicator;
     NSMutableArray *clothes, *sortedClothes;
+    float lastTemp;
 }
 @end
 
@@ -42,15 +44,77 @@ const NSString *kWundergroundKey = @"7f816bcd9405569f";
     [self startSignificantUpdates];
 }
 
--(void)setClothes:(NSMutableArray*)_clothes {
-    clothes = [_clothes copy];
-    
-}
+
 
 -(void)sortClothes {
+    clothes = [[Clothing getClothes] mutableCopy];
     sortedClothes = [[NSMutableArray alloc] init];
+    int targetWarmness = [self warmnessRatingForTemp:lastTemp];
+    Clothing *bestMatch = nil;
+    NSMutableArray *clothingCopy = [clothes mutableCopy];
+    for(Clothing *item in clothes) {
+        if(item.dirty == YES) {
+            [clothingCopy removeObject:item];
+        }
+    }
+    clothes = clothingCopy;
+    
     while([clothes count] > 0) {
-        
+        NSLog(@"In clothes sort while loop: %d", [clothes count]);
+        for(Clothing *item in clothes) {
+            if(bestMatch == nil) {
+                bestMatch = item;
+            } else {
+                if(abs(item.warmth - targetWarmness) < abs(bestMatch.warmth - targetWarmness)) {
+                    bestMatch = item;
+                }
+            }
+        }
+        [sortedClothes addObject:bestMatch];
+        NSLog(@"Sorted Array Size: %d", [sortedClothes count]);
+        [clothes removeObject:bestMatch];
+        bestMatch = nil;
+    }
+    NSLog(@"SortedClothes count: %d", [sortedClothes count]);
+    
+    if([sortedClothes count] > 0) {
+        Clothing *item = [sortedClothes objectAtIndex:0];
+        self.clothing1Name.text = item.name;
+        self.clothing1Image.image = item.picture;
+    }
+    if([sortedClothes count] > 1) {
+        Clothing *item = [sortedClothes objectAtIndex:1];
+        self.clothing2Name.text = item.name;
+        self.clothing2Image.image = item.picture;
+    }
+    if([sortedClothes count] > 2) {
+        Clothing *item = [sortedClothes objectAtIndex:2];
+        self.clothing3Name.text = item.name;
+        self.clothing3Image.image = item.picture;
+    }
+}
+
+-(int)warmnessRatingForTemp:(float)temp {
+    if(temp < 32) {
+        return 10;
+    } else if(temp < 40) {
+        return 9;
+    } else if(temp < 45) {
+        return 8;
+    } else if(temp < 50) {
+        return 7;
+    } else if(temp < 55) {
+        return 6;
+    } else if(temp < 65) {
+        return 5;
+    } else if(temp < 70) {
+        return 4;
+    } else if(temp < 75) {
+        return 3;
+    } else if(temp < 85) {
+        return 2;
+    } else {
+        return 1;
     }
 }
 
@@ -327,6 +391,7 @@ const NSString *kWundergroundKey = @"7f816bcd9405569f";
     if (tempC)
     {
         statusMessage = @"Retrieved temperature";
+        lastTemp = [tempC floatValue];
         self.tempCLabel.text = [NSString stringWithFormat:@"Temp: %@",[tempC stringValue]];
     }
     else
@@ -337,6 +402,8 @@ const NSString *kWundergroundKey = @"7f816bcd9405569f";
     // update the user interface status message
     
     [self updateStatusMessage:statusMessage stopActivityIndicator:YES stopLocationServices:YES logMessage:weatherResults];
+    
+    [self sortClothes];
 }
 
 #pragma mark - Zip code field methods

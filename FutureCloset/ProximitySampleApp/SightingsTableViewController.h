@@ -19,14 +19,18 @@
 #import <UIKit/UIKit.h>
 #import <FYX/FYXSightingManager.h>
 #import <FYX/FYXVisitManager.h>
+#import "ViewController.h"
 
 
-@interface SightingsTableViewController : UITableViewController <FYXVisitDelegate, UIActionSheetDelegate>
+@interface SightingsTableViewController : UITableViewController <FYXVisitDelegate, UIActionSheetDelegate> {
+    IBOutlet ViewController *controller;
+}
 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshBarButton;
 @property (strong, nonatomic) UIImageView *spinnerImageView;
 
 - (IBAction)refreshButtonClicked:(id)sender;
+-(IBAction)whatToWearPressed:(id)sender;
 
 @end

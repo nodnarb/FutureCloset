@@ -28,6 +28,7 @@
 #import <FYX/FYX.h>                      
 #import "EnableProximityViewController.h"
 #import "Clothing.h"
+#import "ViewController.h"
 
 @interface SightingsTableViewController ()
 
@@ -78,6 +79,10 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+-(IBAction)whatToWearPressed:(id)sender {
+    
 }
 
 - (void)dealloc
@@ -281,7 +286,7 @@
     }
     @synchronized(self.clothesArray) {
         if(self.clothesArray == nil) {
-            self.clothesArray = [NSMutableArray new];
+            self.clothesArray = [Clothing getClothes];
         }
     }
     // Always reload the table (even if the transmitter list didn't change)

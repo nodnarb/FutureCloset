@@ -8,7 +8,16 @@
 
 #import "Clothing.h"
 
+static NSMutableArray *theClothes = nil;
+
 @implementation Clothing
+
++(NSMutableArray*)getClothes {
+    if(theClothes==nil) {
+        theClothes = [[NSMutableArray alloc] init];
+    }
+    return theClothes;
+}
 
 -(id)init {
     self = [super init];

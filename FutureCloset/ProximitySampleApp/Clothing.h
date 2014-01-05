@@ -48,5 +48,7 @@ typedef enum {
 
 -(void)setTransmitter:(Transmitter *)transmitter;
 
++(NSMutableArray*)getClothes;
+
 
 @end
