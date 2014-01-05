@@ -118,8 +118,11 @@
     //[self.navigationController.navigationBar setTranslucent:NO];
     
     // Replace the nav bar's title text with a custom image view
-    //UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_binoculars.png"]];
-    //[self.navigationController.navigationBar.topItem setTitleView:imageView];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FTZlogo.png"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.navigationController.navigationBar.topItem setTitleView:imageView];
+    imageView.frame = CGRectMake(0, 0, 233, 24);
+    
     self.title = @"FutureThreadz";
     
     self.navigationController.toolbarHidden = false;

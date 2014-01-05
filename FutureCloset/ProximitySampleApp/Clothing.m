@@ -157,19 +157,19 @@ static NSMutableArray *theClothes = nil;
     }
 
     if([transmitter.name isEqualToString:@"Beacon 6"]) {
-        self.name = @"Pokemon Master Hat";
-        self.color = Red;
+        self.name = @"Ratty Shirt";
+        self.color = Orange;
         self.lastWornDate = @"Dec 12, 2013";
         self.numberFriendsWearing = 0;
-        [self setDefaultsForType:Accessory];
+        [self setDefaultsForType:TShirt];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 7"]) {
-        self.name = @"Ratty Shirt";
-        self.color = Orange;
+        self.name = @"Pokemon Master Hat";
+        self.color = Red;
         self.lastWornDate = @"Dec 02, 2013";
         self.numberFriendsWearing = 0;
-        [self setDefaultsForType:TShirt];
+        [self setDefaultsForType:Accessory];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 8"]) {

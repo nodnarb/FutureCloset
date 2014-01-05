@@ -46,6 +46,9 @@
 		81E3EAD81879CE5F006FACCE /* LaundryStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EAD61879CE5F006FACCE /* LaundryStatusViewController.xib */; };
 		81E3EADA1879CF6D006FACCE /* WashingMachine.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EAD91879CF6D006FACCE /* WashingMachine.png */; };
 		81E3EADC1879D3F4006FACCE /* amazon-logo-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EADB1879D3F4006FACCE /* amazon-logo-10.png */; };
+		81E3EADE1879F3D0006FACCE /* FTZicon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EADD1879F3D0006FACCE /* FTZicon copy.png */; };
+		81E3EAE01879F40A006FACCE /* FTZicon copy114.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EADF1879F40A006FACCE /* FTZicon copy114.png */; };
+		81E3EAE21879F619006FACCE /* FTZlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EAE11879F619006FACCE /* FTZlogo.png */; };
 		9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07244E15FFCA030014E147 /* CoreBluetooth.framework */; };
 		9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245015FFCA0A0014E147 /* CoreLocation.framework */; };
 		9A07245315FFCA490014E147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245215FFCA490014E147 /* Security.framework */; };
@@ -203,6 +206,9 @@
 		81E3EAD61879CE5F006FACCE /* LaundryStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaundryStatusViewController.xib; sourceTree = "<group>"; };
 		81E3EAD91879CF6D006FACCE /* WashingMachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WashingMachine.png; sourceTree = "<group>"; };
 		81E3EADB1879D3F4006FACCE /* amazon-logo-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amazon-logo-10.png"; sourceTree = "<group>"; };
+		81E3EADD1879F3D0006FACCE /* FTZicon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FTZicon copy.png"; sourceTree = "<group>"; };
+		81E3EADF1879F40A006FACCE /* FTZicon copy114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FTZicon copy114.png"; sourceTree = "<group>"; };
+		81E3EAE11879F619006FACCE /* FTZlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FTZlogo.png; sourceTree = "<group>"; };
 		9A07244E15FFCA030014E147 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		9A07245015FFCA0A0014E147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A07245215FFCA490014E147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -413,6 +419,8 @@
 			isa = PBXGroup;
 			children = (
 				C07F711A17285BF00051F55D /* libz.dylib */,
+				81E3EADF1879F40A006FACCE /* FTZicon copy114.png */,
+				81E3EADD1879F3D0006FACCE /* FTZicon copy.png */,
 				C002FEC21795F3E7000CBADE /* ProximitySampleApp */,
 				C002FF3F1795F3E7000CBADE /* ProximitySampleAppTests */,
 				9A89197A15FFBEE400556B6F /* Frameworks */,
@@ -490,6 +498,7 @@
 		C002FED31795F3E7000CBADE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81E3EAE11879F619006FACCE /* FTZlogo.png */,
 				81E3EAD91879CF6D006FACCE /* WashingMachine.png */,
 				81E3EAD21879C6A4006FACCE /* fb_icon_325x325.png */,
 				81E3EA4E1878ECAB006FACCE /* Dress.png */,
@@ -664,6 +673,11 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Qualcomm Retail Solutions, Inc";
+				TargetAttributes = {
+					9A89197615FFBEE400556B6F = {
+						DevelopmentTeam = 285PR94W4V;
+					};
+				};
 			};
 			buildConfigurationList = 9A89197115FFBEE400556B6F /* Build configuration list for PBXProject "ProximitySampleApp-withFrameworks" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -699,6 +713,7 @@
 				C002FF561795F3E7000CBADE /* avatar_03@2x.png in Resources */,
 				C002FF571795F3E7000CBADE /* avatar_04.png in Resources */,
 				C002FF581795F3E7000CBADE /* avatar_04@2x.png in Resources */,
+				81E3EADE1879F3D0006FACCE /* FTZicon copy.png in Resources */,
 				C002FF591795F3E7000CBADE /* avatar_05.png in Resources */,
 				C002FF5A1795F3E7000CBADE /* avatar_05@2x.png in Resources */,
 				C002FF5B1795F3E7000CBADE /* avatar_06.png in Resources */,
@@ -706,7 +721,9 @@
 				C002FF5D1795F3E7000CBADE /* avatar_07.png in Resources */,
 				C002FF5E1795F3E7000CBADE /* avatar_07@2x.png in Resources */,
 				C002FF5F1795F3E7000CBADE /* avatar_08.png in Resources */,
+				81E3EAE01879F40A006FACCE /* FTZicon copy114.png in Resources */,
 				C002FF601795F3E7000CBADE /* avatar_08@2x.png in Resources */,
+				81E3EAE21879F619006FACCE /* FTZlogo.png in Resources */,
 				C002FF611795F3E7000CBADE /* avatar_09.png in Resources */,
 				81E3EADC1879D3F4006FACCE /* amazon-logo-10.png in Resources */,
 				81E3EADA1879CF6D006FACCE /* WashingMachine.png in Resources */,
@@ -913,6 +930,8 @@
 		9A8919AE15FFBEE400556B6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../Frameworks\\\"",
@@ -935,6 +954,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -943,6 +963,8 @@
 		9A8919AF15FFBEE400556B6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../../Frameworks\\\"",
@@ -965,6 +987,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
