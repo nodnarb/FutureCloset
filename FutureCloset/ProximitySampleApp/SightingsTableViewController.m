@@ -353,6 +353,13 @@
         // Update the transmitter text
         cell.transmitterNameLabel.text = cloth.name;
         cell.transmitterIcon.image = cloth.picture;
+        cell.lastWornLabel.text = [NSString stringWithFormat:@"Last Worn: %@", cloth.lastWornDate];
+        if(cloth.numberFriendsWearing > 0) {
+            cell.friendsWearingLabel.textColor = [UIColor redColor];
+        } else {
+            cell.friendsWearingLabel.textColor = [UIColor lightGrayColor];
+        }
+        cell.friendsWearingLabel.text = [NSString stringWithFormat:@"%d friends wearing", cloth.numberFriendsWearing];
         
         // Update the transmitter avatar (icon image)
         NSInteger avatarID = [UserSettingsRepository getAvatarIDForTransmitterID:transmitter.identifier];
