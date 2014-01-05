@@ -108,16 +108,12 @@ NSString *EADSessionDataReceivedNotification = @"EADSessionDataReceivedNotificat
 {
     [self closeSession];
     [self setupControllerForAccessory:nil withProtocolString:nil];
-
-    [super dealloc];
 }
 
 // initialize the accessory with the protocolString
 - (void)setupControllerForAccessory:(EAAccessory *)accessory withProtocolString:(NSString *)protocolString
 {
-    [_accessory release];
-    _accessory = [accessory retain];
-    [_protocolString release];
+    _accessory = accessory;
     _protocolString = [protocolString copy];
 }
 
@@ -155,12 +151,8 @@ NSString *EADSessionDataReceivedNotification = @"EADSessionDataReceivedNotificat
     [[_session outputStream] removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [[_session outputStream] setDelegate:nil];
 
-    [_session release];
     _session = nil;
-
-    [_writeData release];
     _writeData = nil;
-    [_readData release];
     _readData = nil;
 }
 
