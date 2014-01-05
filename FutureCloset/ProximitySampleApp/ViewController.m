@@ -427,7 +427,7 @@ const NSString *kWundergroundKey = @"7f816bcd9405569f";
     {
         statusMessage = @"Retrieved temperature";
         lastTemp = [tempC floatValue];
-        self.tempCLabel.text = [NSString stringWithFormat:@"Temp: %@",[tempC stringValue]];
+        self.tempCLabel.text = [NSString stringWithFormat:@"%@°F",[tempC stringValue]];
     }
     else
     {
