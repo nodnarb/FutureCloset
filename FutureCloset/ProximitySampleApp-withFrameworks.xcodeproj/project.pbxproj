@@ -903,6 +903,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
 				INFOPLIST_FILE = "ProximitySampleApp/ProximitySampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SDWebImage-fzazkckrmtsktzejwddseaxolcrs/Build/Products/Debug-iphoneos",
@@ -932,6 +933,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
 				INFOPLIST_FILE = "ProximitySampleApp/ProximitySampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SDWebImage-fzazkckrmtsktzejwddseaxolcrs/Build/Products/Debug-iphoneos",

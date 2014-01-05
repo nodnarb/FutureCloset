@@ -77,21 +77,56 @@ const NSString *kWundergroundKey = @"7f816bcd9405569f";
     }
     NSLog(@"SortedClothes count: %d", [sortedClothes count]);
     
+    Clothing *item1 = nil;
+    int i = 0;
     if([sortedClothes count] > 0) {
-        Clothing *item = [sortedClothes objectAtIndex:0];
-        self.clothing1Name.text = item.name;
-        self.clothing1Image.image = item.picture;
+        item1 = [sortedClothes objectAtIndex:0];
+        self.clothing1Name.text = item1.name;
+        self.clothing1Image.image = item1.picture;
+        i++;
     }
+    Clothing *item2 = nil;
     if([sortedClothes count] > 1) {
-        Clothing *item = [sortedClothes objectAtIndex:1];
-        self.clothing2Name.text = item.name;
-        self.clothing2Image.image = item.picture;
+        bool found = false;
+        while(!found && [sortedClothes count] > i) {
+            item2 = [sortedClothes objectAtIndex:i];
+            if(![self isType:item2.type relatedToType:item1.type]) {
+                self.clothing2Name.text = item2.name;
+                self.clothing2Image.image = item2.picture;
+                found = true;
+            }
+            i++;
+            
+        }
     }
-    if([sortedClothes count] > 2) {
-        Clothing *item = [sortedClothes objectAtIndex:2];
-        self.clothing3Name.text = item.name;
-        self.clothing3Image.image = item.picture;
+    Clothing *item3 = nil;
+    if([sortedClothes count] > i) {
+        bool found = false;
+        while(!found && [sortedClothes count] > i) {
+            item3 = [sortedClothes objectAtIndex:i];
+            if(![self isType:item2.type relatedToType:item3.type] && ![self isType:item2.type relatedToType:item1.type]) {
+                self.clothing3Name.text = item3.name;
+                self.clothing3Image.image = item3.picture;
+                found = true;
+            }
+            i++;
+            
+        }
     }
+}
+
+-(BOOL)isType:(ClothingType)type1 relatedToType:(ClothingType)type2 {
+    return ([self getTypeGroup:type1] == [self getTypeGroup:type2]);
+}
+
+-(int)getTypeGroup:(ClothingType)type {
+    if(type == TShirt || type == LongSleeveShirt || type == Sweater || type == Dress) {
+        return 1;
+    } else if(type==Pant || type==Short || type==Skirt) {
+        return 2;
+    }
+    
+    return 3;
 }
 
 -(int)warmnessRatingForTemp:(float)temp {

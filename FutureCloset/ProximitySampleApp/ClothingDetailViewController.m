@@ -31,18 +31,22 @@
 
 -(void)setClothing:(Clothing*)item {
     clothes = item;
+    [self populateFields];
 }
 
 -(void)populateFields {
     self.title = clothes.name;
-    nameLabel.text = clothes.name;
-
+    nameLabel.text = [NSString stringWithFormat:@"Name: %@", clothes.name];
+    typeLabel.text = [NSString stringWithFormat:@"Type: %@", [clothes getTypeAsString]];
+    warmthLabel.text = [NSString stringWithFormat:@"Warmth: %d", clothes.warmth];
+    imageView.image = clothes.picture;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self populateFields];
 }
 
 - (void)didReceiveMemoryWarning
