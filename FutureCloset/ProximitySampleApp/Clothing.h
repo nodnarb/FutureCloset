@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Transmitter.h"
 
 typedef enum {
     Green,
@@ -43,7 +44,9 @@ typedef enum {
 @property (nonatomic) int warmth;
 @property (nonatomic) UIImage *picture;
 @property (nonatomic) BOOL dirty;
+@property (nonatomic) Transmitter *transmitter;
 
+-(void)setTransmitter:(Transmitter *)transmitter;
 
 
 @end

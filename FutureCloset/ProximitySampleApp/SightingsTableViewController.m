@@ -27,12 +27,14 @@
 #import <FYX/FYXVisitManager.h>
 #import <FYX/FYX.h>                      
 #import "EnableProximityViewController.h"
+#import "Clothing.h"
 
 @interface SightingsTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *transmitters;
 @property (nonatomic) FYXVisitManager *visitManager;
 @property (strong, nonatomic) UIView *noRegisteredTransmittersView;
+@property (nonatomic) NSMutableArray *clothesArray;
 
 @end
 
@@ -234,6 +236,13 @@
 - (void)addTransmitter: (Transmitter *)transmitter{
     @synchronized(self.transmitters){
         [self.transmitters addObject:transmitter];
+        
+    }
+}
+
+-(void)addClothing:(Clothing*)cloth {
+    @synchronized(self.clothesArray) {
+        [self.clothesArray addObject:cloth];
         if([self.transmitters count] == 1){
             [self hideNoTransmittersView];
         }
@@ -268,9 +277,15 @@
         if (self.transmitters == nil) {
             self.transmitters = [NSMutableArray new];
         }
-        // Always reload the table (even if the transmitter list didn't change)
-        [self.tableView reloadData];
+        
     }
+    @synchronized(self.clothesArray) {
+        if(self.clothesArray == nil) {
+            self.clothesArray = [NSMutableArray new];
+        }
+    }
+    // Always reload the table (even if the transmitter list didn't change)
+    [self.tableView reloadData];
 }
 
 - (void)clearTransmitters {
@@ -323,14 +338,16 @@
     
     if (cell != nil) {
         Transmitter *transmitter = [self.transmitters objectAtIndex:indexPath.row];
+        Clothing *cloth = [self.clothesArray objectAtIndex:indexPath.row];
         
         // Update the transmitter text
-        cell.transmitterNameLabel.text = transmitter.name;
+        cell.transmitterNameLabel.text = cloth.name;
+        cell.transmitterIcon.image = cloth.picture;
         
         // Update the transmitter avatar (icon image)
         NSInteger avatarID = [UserSettingsRepository getAvatarIDForTransmitterID:transmitter.identifier];
         NSString *imageFilename = [NSString stringWithFormat:@"avatar_%02d.png", avatarID];
-        cell.transmitterIcon.image = [UIImage imageNamed:imageFilename];
+        //cell.transmitterIcon.image = [UIImage imageNamed:imageFilename];
         
         if ([self isTransmitterAgedOut:transmitter]) {
             [self grayOutSightingsCell:cell];
@@ -384,6 +401,11 @@
         transmitter.previousRSSI = transmitter.rssi;
         transmitter.batteryLevel = 0;
         transmitter.temperature = 0;
+        
+        Clothing *clothes = [[Clothing alloc] init];
+        [clothes setTransmitter:transmitter];
+        
+        [self addClothing:clothes];
         [self addTransmitter:transmitter];
         [self.tableView reloadData];
     }

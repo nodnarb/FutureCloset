@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CBA2843169E24F4004D729B /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2840169E24F4004D729B /* Common.framework */; };
-		1CBA2844169E24F4004D729B /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2841169E24F4004D729B /* FYX.framework */; };
-		1CBA2845169E24F4004D729B /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2842169E24F4004D729B /* NetworkServices.framework */; };
 		81E3EA4B1878DE1C006FACCE /* Clothing.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E3EA4A1878DE1C006FACCE /* Clothing.m */; };
 		81E3EA4D1878E881006FACCE /* TShirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA4C1878E881006FACCE /* TShirt.png */; };
 		81E3EA561878ECAB006FACCE /* Dress.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA4E1878ECAB006FACCE /* Dress.png */; };
@@ -20,6 +17,9 @@
 		81E3EA5B1878ECAB006FACCE /* Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA531878ECAB006FACCE /* Short.png */; };
 		81E3EA5C1878ECAB006FACCE /* Pant.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA541878ECAB006FACCE /* Pant.png */; };
 		81E3EA5D1878ECAB006FACCE /* Sweater.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA551878ECAB006FACCE /* Sweater.png */; };
+		81E3EA621878EEB9006FACCE /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E3EA5F1878EEB9006FACCE /* Common.framework */; };
+		81E3EA631878EEB9006FACCE /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E3EA611878EEB9006FACCE /* FYX.framework */; };
+		81E3EA671878EECB006FACCE /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E3EA651878EECB006FACCE /* NetworkServices.framework */; };
 		9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07244E15FFCA030014E147 /* CoreBluetooth.framework */; };
 		9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245015FFCA0A0014E147 /* CoreLocation.framework */; };
 		9A07245315FFCA490014E147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245215FFCA490014E147 /* Security.framework */; };
@@ -119,9 +119,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CBA2840169E24F4004D729B /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = ../../Frameworks/Common.embeddedframework/Common.framework; sourceTree = "<group>"; };
-		1CBA2841169E24F4004D729B /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = ../../Frameworks/FYX.framework; sourceTree = "<group>"; };
-		1CBA2842169E24F4004D729B /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = ../../Frameworks/NetworkServices.embeddedframework/NetworkServices.framework; sourceTree = "<group>"; };
 		81E3EA491878DE1C006FACCE /* Clothing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clothing.h; sourceTree = "<group>"; };
 		81E3EA4A1878DE1C006FACCE /* Clothing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clothing.m; sourceTree = "<group>"; };
 		81E3EA4C1878E881006FACCE /* TShirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TShirt.png; sourceTree = "<group>"; };
@@ -133,6 +130,9 @@
 		81E3EA531878ECAB006FACCE /* Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Short.png; sourceTree = "<group>"; };
 		81E3EA541878ECAB006FACCE /* Pant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pant.png; sourceTree = "<group>"; };
 		81E3EA551878ECAB006FACCE /* Sweater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweater.png; sourceTree = "<group>"; };
+		81E3EA5F1878EEB9006FACCE /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		81E3EA611878EEB9006FACCE /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FYX.framework; sourceTree = "<group>"; };
+		81E3EA651878EECB006FACCE /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 		9A07244E15FFCA030014E147 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		9A07245015FFCA0A0014E147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A07245215FFCA490014E147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -252,13 +252,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C07F711C17285CF50051F55D /* libz.dylib in Frameworks */,
-				1CBA2843169E24F4004D729B /* Common.framework in Frameworks */,
-				1CBA2845169E24F4004D729B /* NetworkServices.framework in Frameworks */,
-				1CBA2844169E24F4004D729B /* FYX.framework in Frameworks */,
+				81E3EA671878EECB006FACCE /* NetworkServices.framework in Frameworks */,
 				9A07245315FFCA490014E147 /* Security.framework in Frameworks */,
 				9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */,
+				81E3EA631878EEB9006FACCE /* FYX.framework in Frameworks */,
 				9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */,
 				9A89197C15FFBEE400556B6F /* UIKit.framework in Frameworks */,
+				81E3EA621878EEB9006FACCE /* Common.framework in Frameworks */,
 				9A89197E15FFBEE400556B6F /* Foundation.framework in Frameworks */,
 				9A89198015FFBEE400556B6F /* CoreGraphics.framework in Frameworks */,
 			);
@@ -267,6 +267,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81E3EA5E1878EEB9006FACCE /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				81E3EA5F1878EEB9006FACCE /* Common.framework */,
+				81E3EA601878EEB9006FACCE /* Resources */,
+			);
+			path = Common.embeddedframework;
+			sourceTree = "<group>";
+		};
+		81E3EA601878EEB9006FACCE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		81E3EA641878EECB006FACCE /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				81E3EA651878EECB006FACCE /* NetworkServices.framework */,
+				81E3EA661878EECB006FACCE /* Resources */,
+			);
+			path = NetworkServices.embeddedframework;
+			sourceTree = "<group>";
+		};
+		81E3EA661878EECB006FACCE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9A89196C15FFBEE400556B6F = {
 			isa = PBXGroup;
 			children = (
@@ -289,9 +321,9 @@
 		9A89197A15FFBEE400556B6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1CBA2840169E24F4004D729B /* Common.framework */,
-				1CBA2841169E24F4004D729B /* FYX.framework */,
-				1CBA2842169E24F4004D729B /* NetworkServices.framework */,
+				81E3EA641878EECB006FACCE /* NetworkServices.embeddedframework */,
+				81E3EA5E1878EEB9006FACCE /* Common.embeddedframework */,
+				81E3EA611878EEB9006FACCE /* FYX.framework */,
 				9A07245215FFCA490014E147 /* Security.framework */,
 				9A07245015FFCA0A0014E147 /* CoreLocation.framework */,
 				9A07244E15FFCA030014E147 /* CoreBluetooth.framework */,
@@ -735,9 +767,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks\"",
-					"\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"",
-					"\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
+					"\\\"$(SRCROOT)/../../Frameworks\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\\\"",
+					/Users/joncarroll/Documents/Sphero/FutureCloset/FutureCloset/Common.embeddedframework,
+					/Users/joncarroll/Documents/Sphero/FutureCloset/FutureCloset,
+					/Users/joncarroll/Documents/Sphero/FutureCloset/FutureCloset/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
@@ -754,9 +789,12 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks\"",
-					"\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"",
-					"\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
+					"\\\"$(SRCROOT)/../../Frameworks\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\\\"",
+					"\\\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\\\"",
+					/Users/joncarroll/Documents/Sphero/FutureCloset/FutureCloset/Common.embeddedframework,
+					/Users/joncarroll/Documents/Sphero/FutureCloset/FutureCloset,
+					/Users/joncarroll/Documents/Sphero/FutureCloset/FutureCloset/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
