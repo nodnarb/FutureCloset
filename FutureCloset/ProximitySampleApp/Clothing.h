@@ -35,6 +35,7 @@ typedef enum {
 } ClothingType;
 
 @interface Clothing : NSObject {
+
     
 }
 
@@ -44,6 +45,8 @@ typedef enum {
 @property (nonatomic) int warmth;
 @property (nonatomic) UIImage *picture;
 @property (nonatomic) BOOL dirty;
+@property (nonatomic) NSString *lastWornDate;
+@property (nonatomic) int numberFriendsWearing;
 @property (nonatomic) Transmitter *transmitter;
 
 -(void)setTransmitter:(Transmitter *)transmitter;
