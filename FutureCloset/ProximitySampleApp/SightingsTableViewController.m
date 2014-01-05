@@ -31,8 +31,12 @@
 #import "ViewController.h"
 #import "ClothingDetailViewController.h"
 #import "LaundryStatusViewController.h"
+#import "M2x.h"
+#import "FeedsClient.h"
 
-@interface SightingsTableViewController ()
+@interface SightingsTableViewController () {
+    FeedsClient *feedClient;
+}
 
 @property (strong, nonatomic) NSMutableArray *transmitters;
 @property (nonatomic) FYXVisitManager *visitManager;
@@ -47,7 +51,13 @@
     [super viewDidLoad];
     
     
-
+    //get singleton instance of M2x Class
+    M2x* m2x = [M2x shared];
+    //set the Master Api Key
+    m2x.api_key = @"1a08ccc1f387096e8774946cc88a24e9";
+    
+    feedClient = [[FeedsClient alloc] init];
+    [feedClient setFeed_key:@"1a08ccc1f387096e8774946cc88a24e9"];
 
     
     // Create the animated spinner view
@@ -70,6 +80,7 @@
     [self finalizeUITheming];
     [self initializeTransmitters];
     [self initializeVisitManager];
+    [self checkDirtyStatus];
 }
 
 - (void)viewDidUnload {
@@ -480,6 +491,42 @@
 -(IBAction)laundryStatusPressed:(id)sender {
     LaundryStatusViewController *controller = [[LaundryStatusViewController alloc] initWithNibName:@"LaundryStatusViewController" bundle:nil];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)checkDirtyStatus {
+    
+    [feedClient listDataStreamsForFeedId:@"aa339e4f6f75c439e40274b986071d80" success:^(id object) {
+        NSLog(@"Got Data Streams: %@", object);
+        
+        NSArray *array = [object objectForKey:@"streams"];
+        for(NSDictionary *dict in array) {
+            NSString *name = [dict objectForKey:@"name"];
+            Clothing *cloth = [self getClothingForLowercaseBeacon:name];
+            bool dirty = [[dict objectForKey:@"value"] integerValue];
+            cloth.dirty = dirty;
+        }
+        [self.tableView reloadData];
+        
+        [self performSelector:@selector(checkDirtyStatus) withObject:nil afterDelay:2.0];
+    }
+                                 failure:^(NSError *error, NSDictionary *message) {
+        NSLog(@"Error: %@",[error localizedDescription]);
+        NSLog(@"Message: %@",message);
+                                     [self performSelector:@selector(checkDirtyStatus) withObject:nil afterDelay:2.0];
+        
+    } ];
+    
+}
+
+-(Clothing*)getClothingForLowercaseBeacon:(NSString*)name {
+    for(Clothing *cloth in self.clothesArray) {
+        NSString *lowername = [cloth.transmitter.name lowercaseString];
+        NSString *noSpace = [lowername stringByReplacingOccurrencesOfString:@" " withString:@""];
+        if([noSpace isEqualToString:name]) {
+            return cloth;
+        }
+    }
+    return nil;
 }
 
 
