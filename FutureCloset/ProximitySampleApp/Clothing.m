@@ -96,7 +96,7 @@
 
     if([transmitter.name isEqualToString:@"Beacon 5"]) {
         self.name = @"Plaid Hoodie";
-        self.color = White;
+        self.color = Purple;
         [self setDefaultsForType:Jacket];
     }
 
@@ -153,7 +153,7 @@
         self.color = Red;
         [self setDefaultsForType:Accessory];
     }
-    
+
     [self updateImageForColor];
 }
 
