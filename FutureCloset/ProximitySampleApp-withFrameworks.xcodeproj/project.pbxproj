@@ -39,6 +39,8 @@
 		81E3EAC818794936006FACCE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E3EABA18794936006FACCE /* UIImageView+WebCache.m */; };
 		81E3EACA1879498E006FACCE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E3EAC91879498E006FACCE /* ImageIO.framework */; };
 		81E3EACC18794995006FACCE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E3EACB18794995006FACCE /* MapKit.framework */; };
+		81E3EAD01879A5BB006FACCE /* ClothingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */; };
+		81E3EAD11879A5BB006FACCE /* ClothingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */; };
 		9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07244E15FFCA030014E147 /* CoreBluetooth.framework */; };
 		9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245015FFCA0A0014E147 /* CoreLocation.framework */; };
 		9A07245315FFCA490014E147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245215FFCA490014E147 /* Security.framework */; };
@@ -187,6 +189,9 @@
 		81E3EABA18794936006FACCE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		81E3EAC91879498E006FACCE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		81E3EACB18794995006FACCE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		81E3EACD1879A5BB006FACCE /* ClothingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothingDetailViewController.h; sourceTree = "<group>"; };
+		81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothingDetailViewController.m; sourceTree = "<group>"; };
+		81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClothingDetailViewController.xib; sourceTree = "<group>"; };
 		9A07244E15FFCA030014E147 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		9A07245015FFCA0A0014E147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A07245215FFCA490014E147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -461,6 +466,9 @@
 				C002FECF1795F3E7000CBADE /* MainStoryboard_iPhone.storyboard */,
 				81E3EA491878DE1C006FACCE /* Clothing.h */,
 				81E3EA4A1878DE1C006FACCE /* Clothing.m */,
+				81E3EACD1879A5BB006FACCE /* ClothingDetailViewController.h */,
+				81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */,
+				81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */,
 			);
 			path = ProximitySampleApp;
 			sourceTree = "<group>";
@@ -664,6 +672,7 @@
 			files = (
 				C002FF4B1795F3E7000CBADE /* InfoPlist.strings in Resources */,
 				C002FF4C1795F3E7000CBADE /* MainStoryboard_iPad.storyboard in Resources */,
+				81E3EAD11879A5BB006FACCE /* ClothingDetailViewController.xib in Resources */,
 				C002FF4D1795F3E7000CBADE /* MainStoryboard_iPhone.storyboard in Resources */,
 				C002FF511795F3E7000CBADE /* avatar_01.png in Resources */,
 				C002FF521795F3E7000CBADE /* avatar_01@2x.png in Resources */,
@@ -782,6 +791,7 @@
 				81E3EAC018794936006FACCE /* SDWebImageDownloader.m in Sources */,
 				81E3EABF18794936006FACCE /* SDWebImageDecoder.m in Sources */,
 				81E3EAC718794936006FACCE /* UIImage+WebP.m in Sources */,
+				81E3EAD01879A5BB006FACCE /* ClothingDetailViewController.m in Sources */,
 				81E3EAC218794936006FACCE /* SDWebImageManager.m in Sources */,
 				C002FFB21795F3E7000CBADE /* Transmitter.m in Sources */,
 				C002FFB31795F3E7000CBADE /* UserSettingsRepository.m in Sources */,

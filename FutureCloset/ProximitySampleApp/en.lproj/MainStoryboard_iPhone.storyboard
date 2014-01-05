@@ -144,17 +144,6 @@
                                             <rect key="frame" x="19" y="24" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="batteryImageView" image="battery_full.png" id="D1t-FO-vj9">
-                                            <rect key="frame" x="255" y="9" width="51" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="°F" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T57-5z-6U4">
-                                            <rect key="frame" x="205" y="13" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qVB-oP-SRt">
                                             <rect key="frame" x="281" y="89" width="29" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,10 +157,8 @@
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="batteryImageView" destination="D1t-FO-vj9" id="MKF-E8-yNk"/>
                                     <outlet property="rssiImageView" destination="ko3-fQ-wFi" id="pKh-h1-Bch"/>
                                     <outlet property="rssiLabel" destination="qVB-oP-SRt" id="QK5-p0-3kl"/>
-                                    <outlet property="temperature" destination="T57-5z-6U4" id="0kX-5p-6i2"/>
                                     <outlet property="transmitterIcon" destination="SZm-NQ-krW" id="gra-cB-nJa"/>
                                     <outlet property="transmitterNameLabel" destination="6ep-qf-yON" id="TAu-Md-6Mm"/>
                                 </connections>
@@ -214,13 +201,6 @@
                         <rect key="frame" x="0.0" y="44" width="320" height="392"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What to wear?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DFe-jh-h79">
-                                <rect key="frame" x="27" y="14" width="267" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="n5v-a4-2N1">
                                 <rect key="frame" x="27" y="148" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -318,7 +298,6 @@
         <image name="avatar_01.png" width="50" height="50"/>
         <image name="bar_full.png" width="300" height="15"/>
         <image name="bar_track_full.png" width="300" height="15"/>
-        <image name="battery_full.png" width="32" height="17"/>
         <image name="list_item_bg.png" width="320" height="93"/>
         <image name="logo.png" width="240" height="190"/>
         <image name="nav_icon_binoculars.png" width="50" height="44"/>

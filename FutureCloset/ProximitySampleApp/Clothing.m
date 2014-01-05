@@ -75,6 +75,20 @@ static NSMutableArray *theClothes = nil;
     }
 }
 
+-(NSString*)getTypeAsString {
+    NSString *name = @"Unknown";
+    switch (self.type) {
+        case TShirt:
+            name = @"T-Shirt";
+            break;
+        case Sweater:
+            
+        default:
+            break;
+    }
+    return name;
+}
+
 
 -(void)setTransmitter:(Transmitter *)transmitter {
     _transmitter = transmitter;
