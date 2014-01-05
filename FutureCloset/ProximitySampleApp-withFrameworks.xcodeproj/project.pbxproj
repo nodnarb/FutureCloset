@@ -42,6 +42,10 @@
 		81E3EAD01879A5BB006FACCE /* ClothingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */; };
 		81E3EAD11879A5BB006FACCE /* ClothingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */; };
 		81E3EAD31879C6A4006FACCE /* fb_icon_325x325.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EAD21879C6A4006FACCE /* fb_icon_325x325.png */; };
+		81E3EAD71879CE5F006FACCE /* LaundryStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E3EAD51879CE5F006FACCE /* LaundryStatusViewController.m */; };
+		81E3EAD81879CE5F006FACCE /* LaundryStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EAD61879CE5F006FACCE /* LaundryStatusViewController.xib */; };
+		81E3EADA1879CF6D006FACCE /* WashingMachine.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EAD91879CF6D006FACCE /* WashingMachine.png */; };
+		81E3EADC1879D3F4006FACCE /* amazon-logo-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EADB1879D3F4006FACCE /* amazon-logo-10.png */; };
 		9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07244E15FFCA030014E147 /* CoreBluetooth.framework */; };
 		9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245015FFCA0A0014E147 /* CoreLocation.framework */; };
 		9A07245315FFCA490014E147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245215FFCA490014E147 /* Security.framework */; };
@@ -194,6 +198,11 @@
 		81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothingDetailViewController.m; sourceTree = "<group>"; };
 		81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClothingDetailViewController.xib; sourceTree = "<group>"; };
 		81E3EAD21879C6A4006FACCE /* fb_icon_325x325.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_icon_325x325.png; path = ../../../../../../Desktop/lolz/fb_icon_325x325.png; sourceTree = "<group>"; };
+		81E3EAD41879CE5F006FACCE /* LaundryStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaundryStatusViewController.h; sourceTree = "<group>"; };
+		81E3EAD51879CE5F006FACCE /* LaundryStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaundryStatusViewController.m; sourceTree = "<group>"; };
+		81E3EAD61879CE5F006FACCE /* LaundryStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaundryStatusViewController.xib; sourceTree = "<group>"; };
+		81E3EAD91879CF6D006FACCE /* WashingMachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WashingMachine.png; sourceTree = "<group>"; };
+		81E3EADB1879D3F4006FACCE /* amazon-logo-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amazon-logo-10.png"; sourceTree = "<group>"; };
 		9A07244E15FFCA030014E147 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		9A07245015FFCA0A0014E147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A07245215FFCA490014E147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -471,6 +480,9 @@
 				81E3EACD1879A5BB006FACCE /* ClothingDetailViewController.h */,
 				81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */,
 				81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */,
+				81E3EAD41879CE5F006FACCE /* LaundryStatusViewController.h */,
+				81E3EAD51879CE5F006FACCE /* LaundryStatusViewController.m */,
+				81E3EAD61879CE5F006FACCE /* LaundryStatusViewController.xib */,
 			);
 			path = ProximitySampleApp;
 			sourceTree = "<group>";
@@ -478,12 +490,14 @@
 		C002FED31795F3E7000CBADE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81E3EAD91879CF6D006FACCE /* WashingMachine.png */,
 				81E3EAD21879C6A4006FACCE /* fb_icon_325x325.png */,
 				81E3EA4E1878ECAB006FACCE /* Dress.png */,
 				81E3EA4F1878ECAB006FACCE /* Skirt.png */,
 				81E3EA501878ECAB006FACCE /* LongSleeveShirt.png */,
 				81E3EA511878ECAB006FACCE /* Accessory.png */,
 				81E3EA521878ECAB006FACCE /* Jacket.png */,
+				81E3EADB1879D3F4006FACCE /* amazon-logo-10.png */,
 				81E3EA531878ECAB006FACCE /* Short.png */,
 				81E3EA541878ECAB006FACCE /* Pant.png */,
 				81E3EA551878ECAB006FACCE /* Sweater.png */,
@@ -694,6 +708,8 @@
 				C002FF5F1795F3E7000CBADE /* avatar_08.png in Resources */,
 				C002FF601795F3E7000CBADE /* avatar_08@2x.png in Resources */,
 				C002FF611795F3E7000CBADE /* avatar_09.png in Resources */,
+				81E3EADC1879D3F4006FACCE /* amazon-logo-10.png in Resources */,
+				81E3EADA1879CF6D006FACCE /* WashingMachine.png in Resources */,
 				C002FF621795F3E7000CBADE /* avatar_09@2x.png in Resources */,
 				C002FF631795F3E7000CBADE /* avatar_10.png in Resources */,
 				C002FF641795F3E7000CBADE /* avatar_10@2x.png in Resources */,
@@ -723,6 +739,7 @@
 				C002FF811795F3E7000CBADE /* Default-568h@2x.png in Resources */,
 				C002FF8A1795F3E7000CBADE /* iTunesArtwork in Resources */,
 				C002FF8B1795F3E7000CBADE /* list_item_bg.png in Resources */,
+				81E3EAD81879CE5F006FACCE /* LaundryStatusViewController.xib in Resources */,
 				C002FF8C1795F3E7000CBADE /* list_item_bg@2x.png in Resources */,
 				C002FF8D1795F3E7000CBADE /* logo.png in Resources */,
 				C002FF8E1795F3E7000CBADE /* logo@2x.png in Resources */,
@@ -778,6 +795,7 @@
 				C002FF451795F3E7000CBADE /* AppDelegate.m in Sources */,
 				81E3EAC318794936006FACCE /* SDWebImagePrefetcher.m in Sources */,
 				C002FF461795F3E7000CBADE /* ApplicationContext.m in Sources */,
+				81E3EAD71879CE5F006FACCE /* LaundryStatusViewController.m in Sources */,
 				C002FF4E1795F3E7000CBADE /* EnableProximityViewController.m in Sources */,
 				C002FFAC1795F3E7000CBADE /* main.m in Sources */,
 				C002FFAE1795F3E7000CBADE /* ProximitySampleUserSettingsRepository.m in Sources */,

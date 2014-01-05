@@ -189,7 +189,11 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="WbQ-S6-gaM"/>
-                        <barButtonItem title="Laundry Status" id="PgR-zu-su0"/>
+                        <barButtonItem title="Laundry Status" id="PgR-zu-su0">
+                            <connections>
+                                <action selector="laundryStatusPressed:" destination="BzN-KH-Uk9" id="rjZ-An-RJX"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="oXd-De-bWG">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="G27-1U-gA1">

@@ -32,5 +32,6 @@
 
 - (IBAction)refreshButtonClicked:(id)sender;
 -(IBAction)whatToWearPressed:(id)sender;
+-(IBAction)laundryStatusPressed:(id)sender;
 
 @end

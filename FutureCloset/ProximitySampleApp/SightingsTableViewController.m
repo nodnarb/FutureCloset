@@ -30,6 +30,7 @@
 #import "Clothing.h"
 #import "ViewController.h"
 #import "ClothingDetailViewController.h"
+#import "LaundryStatusViewController.h"
 
 @interface SightingsTableViewController ()
 
@@ -451,6 +452,11 @@
 
 - (IBAction)refreshButtonClicked:(id)sender {
     [self clearTransmitters];
+}
+
+-(IBAction)laundryStatusPressed:(id)sender {
+    LaundryStatusViewController *controller = [[LaundryStatusViewController alloc] initWithNibName:@"LaundryStatusViewController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
