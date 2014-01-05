@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        apc-metadata.xml
+ -->
+<apcmetadata>
+
+  <expressionRules>
+
+    <rule>
+      <name>rocket_vgs_SerialEventProcessing</name>
+      <description>Processes serial device events into alarm</description>
+      <enabled>true</enabled>
+      <applyToAll>false</applyToAll>
+      <type>Event</type>
+      <ifExpression><![CDATA[Event.name == "SerialStatus"]]></ifExpression>
+      <thenExpression><![CDATA[Event.description == "ERROR: Serial device missing." && CreateAlarm("SerialStatus", 100, "The Agent has been started without a connected Arduino.  Please connect an Arduino and restart the Agent using the ./xGate command .")]]></thenExpression>
+      <elseExpression><![CDATA[Event.description == "SUCCESS: Serial device connected." && ExecuteCustomObject("rocket_vgs_CloseAlarms", "SerialStatus")]]></elseExpression>
+      <consecutive>true</consecutive>
+      <models>
+				<model>KONTRON_M2MDev</model>
+      </models>
+    </rule>
+	<rule>
+      <name>rocket_vgs_ProtocolEventProcessing</name>
+      <description>Closes out alarms when AKP is successfully parsed</description>
+      <enabled>true</enabled>
+      <applyToAll>false</applyToAll>
+      <type>Event</type>
+      <ifExpression><![CDATA[Event.name == "ProtocolStatus"]]></ifExpression>
+      <thenExpression><![CDATA[Event.description == "Message successfully parsed." && ExecuteCustomObject("rocket_vgs_CloseAlarms", "ProtocolStatus")]]></thenExpression>
+      <elseExpression><![CDATA[CreateAlarm("ProtocolStatus", 100, "Please correct the Arduino sketch's use of the AKP library.")]]></elseExpression>
+      <consecutive>true</consecutive>
+      <models>
+				<model>KONTRON_M2MDev</model>
+      </models>
+    </rule>	
+	<rule>
+      <name>rocket_vgs_SetTime</name>
+      <description>Syncs the timestamp on registration message</description>
+      <enabled>true</enabled>
+      <applyToAll>false</applyToAll>
+      <type>Registration</type>
+      <ifExpression><![CDATA[true]]></ifExpression>
+      <thenExpression><![CDATA[ExecuteAction("Time Sync")]]></thenExpression>
+      <elseExpression/>
+      <consecutive>true</consecutive>
+      <models>
+				<model>KONTRON_M2MDev</model>
+      </models>
+    </rule>
+    <rule>
+      <name>rocket_vgs_ProcessUpStreamCMD</name>
+      <description>Processes the UpstreamCmd data value</description>
+      <enabled>true</enabled>
+      <applyToAll>false</applyToAll>
+      <type>Data</type>
+      <ifExpression><![CDATA[DataItem.UpstreamCmd.value != ""]]></ifExpression>
+      <thenExpression><![CDATA[ExecuteCustomObject("rocket_vgs_ProcessUpstreamCmd",Device.serial,DataItem.UpstreamCMD.value)]]></thenExpression>
+      <elseExpression><![CDATA[]]></elseExpression>
+      <consecutive>true</consecutive>
+      <models>
+          <model>KONTRON_M2MDev</model>
+      </models>
+    </rule>
+      <rule>
+          <name>rocket_vgs_SetLocation</name>
+          <description>Takes a dataItem named "location" and sets its contents as the mobileLocation</description>
+          <enabled>true</enabled>
+          <applyToAll>false</applyToAll>
+          <type>Data</type>
+          <ifExpression><![CDATA[DataItem.Location.value != ""]]></ifExpression>
+          <thenExpression><![CDATA[ExecuteCustomObject("rocket_vgs_SetLocation",Device.serial,DataItem.Location.value)]]></thenExpression>
+          <elseExpression><![CDATA[]]></elseExpression>
+          <consecutive>true</consecutive>
+          <models>
+              <model>KONTRON_M2MDev</model>
+          </models>
+      </rule>
+  </expressionRules>
+
+</apcmetadata>

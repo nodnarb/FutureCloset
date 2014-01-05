@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        apc-metadata.xml
+ -->
+<apcmetadata>
+    <models>
+<!--         <model>
+            <name>Asset</name>
+            standalone or gateway
+            <type>standalone</type>
+            <DataItems>
+                <DataItem>
+                    <name>LastSessionActivity</name>
+                    string or digital or analog
+                    <type>digital</type>
+                    <visible>false</visible>
+                    <stored>true</stored>
+                    0 = no history,1 = Stored,2 = no storage,3 = on change
+                    <storageOption>1</storageOption>
+                    <readOnly>false</readOnly>
+                </DataItem>
+            </DataItems>
+            <Properties>
+                <Property>Role</Property>
+            </Properties>
+        </model> -->
+			
+<!--
+			<model>
+            <name>string</name>
+            <type>[standalone|gateway]</type>
+            <DataItems>
+                <DataItem>
+                    <name>string</name>
+                    <type>[digital|string|analog]</type>
+                    <visible>[true|false]</visible>
+                    <stored>[true|false]</stored>                    
+                    <storageOption>[0|1|2|3] where 0 = no history,1 = Stored,2 = no storage,3 = on change</storageOption>
+                    <readOnly>[true|false]</readOnly>
+                </DataItem>
+            </DataItems>
+            <Properties>
+                <Property>string</Property>
+            </Properties>
+        </model>
+-->
+    </models>
+</apcmetadata>

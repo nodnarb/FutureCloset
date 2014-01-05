@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        apc-metadata.xml
+ -->
+<apcmetadata>
+
+	<applications>
+		<application>
+			<description>Vegas 2014</description>
+			<applicationId>Team01Hack2014</applicationId>
+			<indexFile>index.html</indexFile>
+			<sourcePath>.</sourcePath>
+			<!--<zipFile>relative path from apc-metadata.xml to the zip file containing the application files</zipFile>-->
+			<!--<customTab>
+				<tabPrivilegeName>the privilege name required for the tab to be shown</tabPrivilegeName>
+				<afterTab>the name of the tab after which to place this tab</afterTab>
+				<showFooter>[true|false]</showFooter>
+				<tabNames>
+					<label>
+						<locale>the i18n locale (for example en_US or ja_JP)</locale>
+						<name>the name to be displayed for the locale</name>
+					</label>
+				</tabNames>
+			</customTab>-->
+		</application>		
+	</applications>
+</apcmetadata>	

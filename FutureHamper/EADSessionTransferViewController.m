@@ -49,6 +49,16 @@
 
 #import "EADSessionTransferViewController.h"
 #import "EADSessionController.h"
+#import <FYX/FYXTransmitter.h>
+#import <FYX/FYXVisit.h>
+#import <FYX/FYXTransmitterManager.h>
+#import <FYX/FYX.h>
+#import "Transmitter.h"
+
+@interface EADSessionTransferViewController()
+@property (strong, nonatomic) NSMutableArray *transmitters;
+@property (nonatomic) FYXVisitManager *visitManager;
+@end
 
 @implementation EADSessionTransferViewController
 
@@ -130,7 +140,7 @@
 
     EADSessionController *sessionController = [EADSessionController sharedController];
 
-    _accessory = [[sessionController accessory] retain];
+    _accessory = [sessionController accessory];
     [self setTitle:[sessionController protocolString]];
     [sessionController openSession];
 }
@@ -144,12 +154,18 @@
     EADSessionController *sessionController = [EADSessionController sharedController];
 
     [sessionController closeSession];
-    [_accessory release];
     _accessory = nil;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initializeTransmitters];
+    [self initializeVisitManager];
 }
 
 - (void)viewDidUnload
 {
+    [self cleanupVisitManager];
     [super viewDidUnload];
     self.receivedBytesLabel = nil;
     self.stringToSendTextField = nil;
@@ -195,6 +211,123 @@
     }
 
     [_receivedBytesLabel setText:[NSString stringWithFormat:@"Bytes Received from Session: %d", _totalBytesRead]];
+}
+
+- (void)dealloc
+{
+    [self cleanupVisitManager];
+}
+
+- (void)initializeVisitManager {
+    NSLog(@"#### initializeVisitManager");
+    if (!self.visitManager) {
+        self.visitManager = [[FYXVisitManager alloc] init];
+        self.visitManager.delegate = self;
+    }
+    NSMutableDictionary *options = [NSMutableDictionary new];
+    [options setObject:[NSNumber numberWithInt:15] forKey:FYXVisitOptionDepartureIntervalInSecondsKey];
+    [options setObject:[NSNumber numberWithInt:FYXSightingOptionSignalStrengthWindowNone] forKey:FYXSightingOptionSignalStrengthWindowKey];
+    [self.visitManager startWithOptions:options];
+}
+
+- (void)cleanupVisitManager {
+    if (self.visitManager) {
+        [self.visitManager stop];
+    }
+}
+
+#pragma mark - Transmitters manipulation
+
+- (Transmitter *)transmitterForID:(NSString *)ID {
+    for (Transmitter *transmitter in self.transmitters) {
+        if ([transmitter.identifier isEqualToString:ID]) {
+            return transmitter;
+        }
+    }
+    return nil;
+}
+
+- (void)initializeTransmitters {
+    // Re-create the transmitters container array
+    @synchronized(self.transmitters){
+        if (self.transmitters == nil) {
+            self.transmitters = [NSMutableArray new];
+        }
+        // Always reload the table (even if the transmitter list didn't change)
+    }
+}
+
+- (void)clearTransmitters {
+    @synchronized(self.transmitters){
+        [self.transmitters removeAllObjects];
+    }
+}
+
+- (void)removeTransmitter: (Transmitter*)transmitter {
+    NSInteger count = 0;
+    @synchronized(self.transmitters){
+        [self.transmitters removeObject:transmitter];
+        count =[self.transmitters count];
+    }
+}
+
+- (void)addTransmitter: (Transmitter *)transmitter{
+    @synchronized(self.transmitters){
+        [self.transmitters addObject:transmitter];
+    }
+}
+
+- (BOOL)isTransmitterAgedOut:(Transmitter *)transmitter {
+
+    NSDate *now = [NSDate date];
+    NSTimeInterval ageOutPeriod = [[NSUserDefaults standardUserDefaults] integerForKey:@"age_out_period"];
+
+    if ([now timeIntervalSinceDate:transmitter.lastSighted] > ageOutPeriod) {
+        return YES;
+    }
+    return NO;
+}
+
+- (void)updateTransmitter:(Transmitter *)transmitter withVisit:(FYXVisit *)visit RSSI:(NSNumber *)rssi {
+    transmitter.previousRSSI = transmitter.rssi;
+    transmitter.rssi = rssi;
+    transmitter.batteryLevel = visit.transmitter.battery;
+    transmitter.temperature = visit.transmitter.temperature;
+}
+
+#pragma mark - FYX visit delegate
+
+- (void)didArrive:(FYXVisit *)visit {
+    NSLog(@"############## didArrive: %@", visit);
+}
+
+- (void)didDepart:(FYXVisit *)visit {
+    NSLog(@"############## didDepart: %@", visit);
+    Transmitter *transmitter = [self transmitterForID:visit.transmitter.identifier];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.transmitters indexOfObject:transmitter] inSection:0];
+}
+
+- (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI {
+    NSLog(@"############## receivedSighting: %@", visit);
+
+    Transmitter *transmitter = [self transmitterForID:visit.transmitter.identifier];
+    if (!transmitter) {
+        NSString *transmitterName = visit.transmitter.identifier;
+        if(visit.transmitter.name){
+            transmitterName = visit.transmitter.name;
+        }
+        transmitter = [Transmitter new];
+        transmitter.identifier = visit.transmitter.identifier;
+        transmitter.name = transmitterName;
+        transmitter.lastSighted = [NSDate dateWithTimeIntervalSince1970:0];
+        transmitter.rssi = [NSNumber numberWithInt:-100];
+        transmitter.previousRSSI = transmitter.rssi;
+        transmitter.batteryLevel = 0;
+        transmitter.temperature = 0;
+        [self addTransmitter:transmitter];
+    }
+
+    transmitter.lastSighted = updateTime;
 }
 
 @end

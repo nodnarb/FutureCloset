@@ -48,8 +48,10 @@
  */
 
 #import <ExternalAccessory/ExternalAccessory.h>
+#import <FYX/FYXSightingManager.h>
+#import <FYX/FYXVisitManager.h>
 
-@interface EADSessionTransferViewController : UIViewController <UITextFieldDelegate> {
+@interface EADSessionTransferViewController : UIViewController <UITextFieldDelegate, FYXVisitDelegate> {
     EAAccessory *_accessory;
     UILabel *_receivedBytesLabel;
     UITextField *_stringToSendTextField;
@@ -65,8 +67,8 @@
 // UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 
-@property(nonatomic, retain) IBOutlet UILabel *receivedBytesLabel;
-@property(nonatomic, retain) IBOutlet UITextField *stringToSendTextField;
-@property(nonatomic, retain) IBOutlet UITextField *hexToSendTextField;
+@property(nonatomic, strong) IBOutlet UILabel *receivedBytesLabel;
+@property(nonatomic, strong) IBOutlet UITextField *stringToSendTextField;
+@property(nonatomic, strong) IBOutlet UITextField *hexToSendTextField;
 
 @end

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        Framework/Initialization/AWCCInitialization.xml
+ -->
+<apcmetadata>
+
+  <!-- 
+    The (optional) runOn attribute allows an initialization step to run only during the installType(s) specified by
+    the comma-separated list (no whitespace is allowed).
+    The (optional) deleteScriptAfter attribute instructs the Artisan installer to delete the custom object from the
+    Axeda platform at the tail end of the install or uninstall.
+  -->
+	<!--
+		<initialization>
+				<step runOn="initial,update,upgrade" deleteScriptAfter="true">
+						<script content-type="xml">custom_object_name1</script>
+						<startLabel>string printed before step is done</startLabel>
+						<endLabel>string printed after step is done</endLabel>
+				</step>
+				<step>
+						<script content-type="xml">custom_object_name2</script>
+						<startLabel>string printed before step is done</startLabel>
+						<endLabel>string printed after step is done</endLabel>
+						<body>
+								the body to be POSTed to the custom object
+						</body>
+				</step>
+		</initialization>
+-->
+</apcmetadata>

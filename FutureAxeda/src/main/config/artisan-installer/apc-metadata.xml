@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- apc-metadata.xml -->
+<apcmetadata version="1.0.0" project="Hello">
+  <customobjects>
+    <import src="Sample/customObjects.xml" />
+  </customobjects>
+
+  <models>
+    <import src="Sample/models.xml" />
+  </models>
+
+  <expressionRules>
+    <import src="Sample/rules.xml" />
+  </expressionRules>
+
+  <ruleTimers>
+    <import src="Sample/ruleTimers.xml" />
+  </ruleTimers>
+
+  <initialization>
+    <import src="Sample/initializations.xml" />
+  </initialization>
+
+  <applications>
+    <import src="Sample/applications.xml" />
+  </applications>
+
+  <!-- TIP: Custom Objects and Custom Applications referenced by ExtendedUIModules 
+    must first exist in the system, so keep the reference to your ExtendedUIModule 
+    metadata xml last in this file. -->
+
+  <extendedUIModules>
+    <import src="Sample/extendedUIModules.xml" />
+  </extendedUIModules>
+
+</apcmetadata>
