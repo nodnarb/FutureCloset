@@ -41,6 +41,7 @@
 		81E3EACC18794995006FACCE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E3EACB18794995006FACCE /* MapKit.framework */; };
 		81E3EAD01879A5BB006FACCE /* ClothingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */; };
 		81E3EAD11879A5BB006FACCE /* ClothingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */; };
+		81E3EAD31879C6A4006FACCE /* fb_icon_325x325.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EAD21879C6A4006FACCE /* fb_icon_325x325.png */; };
 		9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07244E15FFCA030014E147 /* CoreBluetooth.framework */; };
 		9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245015FFCA0A0014E147 /* CoreLocation.framework */; };
 		9A07245315FFCA490014E147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245215FFCA490014E147 /* Security.framework */; };
@@ -192,6 +193,7 @@
 		81E3EACD1879A5BB006FACCE /* ClothingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothingDetailViewController.h; sourceTree = "<group>"; };
 		81E3EACE1879A5BB006FACCE /* ClothingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothingDetailViewController.m; sourceTree = "<group>"; };
 		81E3EACF1879A5BB006FACCE /* ClothingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClothingDetailViewController.xib; sourceTree = "<group>"; };
+		81E3EAD21879C6A4006FACCE /* fb_icon_325x325.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_icon_325x325.png; path = ../../../../../../Desktop/lolz/fb_icon_325x325.png; sourceTree = "<group>"; };
 		9A07244E15FFCA030014E147 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		9A07245015FFCA0A0014E147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A07245215FFCA490014E147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -476,6 +478,7 @@
 		C002FED31795F3E7000CBADE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81E3EAD21879C6A4006FACCE /* fb_icon_325x325.png */,
 				81E3EA4E1878ECAB006FACCE /* Dress.png */,
 				81E3EA4F1878ECAB006FACCE /* Skirt.png */,
 				81E3EA501878ECAB006FACCE /* LongSleeveShirt.png */,
@@ -760,6 +763,7 @@
 				C002FFAB1795F3E7000CBADE /* spinner_12@2x.png in Resources */,
 				C002FFAD1795F3E7000CBADE /* ProximitySampleApp-Info.plist in Resources */,
 				C002FFAF1795F3E7000CBADE /* Settings.bundle in Resources */,
+				81E3EAD31879C6A4006FACCE /* fb_icon_325x325.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

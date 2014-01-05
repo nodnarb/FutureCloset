@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *temperature;
 @property (weak, nonatomic) IBOutlet UILabel *rssiLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *proximityView;
+@property (weak, nonatomic) IBOutlet UILabel *friendsWearingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastWornLabel;
 
 
 @property (nonatomic) BOOL isGrayedOut;
