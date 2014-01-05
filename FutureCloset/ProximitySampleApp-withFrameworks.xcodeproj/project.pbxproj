@@ -10,6 +10,16 @@
 		1CBA2843169E24F4004D729B /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2840169E24F4004D729B /* Common.framework */; };
 		1CBA2844169E24F4004D729B /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2841169E24F4004D729B /* FYX.framework */; };
 		1CBA2845169E24F4004D729B /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA2842169E24F4004D729B /* NetworkServices.framework */; };
+		81E3EA4B1878DE1C006FACCE /* Clothing.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E3EA4A1878DE1C006FACCE /* Clothing.m */; };
+		81E3EA4D1878E881006FACCE /* TShirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA4C1878E881006FACCE /* TShirt.png */; };
+		81E3EA561878ECAB006FACCE /* Dress.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA4E1878ECAB006FACCE /* Dress.png */; };
+		81E3EA571878ECAB006FACCE /* Skirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA4F1878ECAB006FACCE /* Skirt.png */; };
+		81E3EA581878ECAB006FACCE /* LongSleeveShirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA501878ECAB006FACCE /* LongSleeveShirt.png */; };
+		81E3EA591878ECAB006FACCE /* Accessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA511878ECAB006FACCE /* Accessory.png */; };
+		81E3EA5A1878ECAB006FACCE /* Jacket.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA521878ECAB006FACCE /* Jacket.png */; };
+		81E3EA5B1878ECAB006FACCE /* Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA531878ECAB006FACCE /* Short.png */; };
+		81E3EA5C1878ECAB006FACCE /* Pant.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA541878ECAB006FACCE /* Pant.png */; };
+		81E3EA5D1878ECAB006FACCE /* Sweater.png in Resources */ = {isa = PBXBuildFile; fileRef = 81E3EA551878ECAB006FACCE /* Sweater.png */; };
 		9A07244F15FFCA030014E147 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07244E15FFCA030014E147 /* CoreBluetooth.framework */; };
 		9A07245115FFCA0A0014E147 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245015FFCA0A0014E147 /* CoreLocation.framework */; };
 		9A07245315FFCA490014E147 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07245215FFCA490014E147 /* Security.framework */; };
@@ -109,9 +119,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CBA2840169E24F4004D729B /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = "../../Frameworks/Common.embeddedframework/Common.framework"; sourceTree = "<group>"; };
-		1CBA2841169E24F4004D729B /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = "../../Frameworks/FYX.framework"; sourceTree = "<group>"; };
-		1CBA2842169E24F4004D729B /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = "../../Frameworks/NetworkServices.embeddedframework/NetworkServices.framework"; sourceTree = "<group>"; };
+		1CBA2840169E24F4004D729B /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = ../../Frameworks/Common.embeddedframework/Common.framework; sourceTree = "<group>"; };
+		1CBA2841169E24F4004D729B /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = ../../Frameworks/FYX.framework; sourceTree = "<group>"; };
+		1CBA2842169E24F4004D729B /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = ../../Frameworks/NetworkServices.embeddedframework/NetworkServices.framework; sourceTree = "<group>"; };
+		81E3EA491878DE1C006FACCE /* Clothing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clothing.h; sourceTree = "<group>"; };
+		81E3EA4A1878DE1C006FACCE /* Clothing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clothing.m; sourceTree = "<group>"; };
+		81E3EA4C1878E881006FACCE /* TShirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TShirt.png; sourceTree = "<group>"; };
+		81E3EA4E1878ECAB006FACCE /* Dress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dress.png; sourceTree = "<group>"; };
+		81E3EA4F1878ECAB006FACCE /* Skirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skirt.png; sourceTree = "<group>"; };
+		81E3EA501878ECAB006FACCE /* LongSleeveShirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LongSleeveShirt.png; sourceTree = "<group>"; };
+		81E3EA511878ECAB006FACCE /* Accessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Accessory.png; sourceTree = "<group>"; };
+		81E3EA521878ECAB006FACCE /* Jacket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jacket.png; sourceTree = "<group>"; };
+		81E3EA531878ECAB006FACCE /* Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Short.png; sourceTree = "<group>"; };
+		81E3EA541878ECAB006FACCE /* Pant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pant.png; sourceTree = "<group>"; };
+		81E3EA551878ECAB006FACCE /* Sweater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweater.png; sourceTree = "<group>"; };
 		9A07244E15FFCA030014E147 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		9A07245015FFCA0A0014E147 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9A07245215FFCA490014E147 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -305,6 +326,8 @@
 				C002FFB71795F585000CBADE /* SupportingFiles */,
 				C002FECD1795F3E7000CBADE /* MainStoryboard_iPad.storyboard */,
 				C002FECF1795F3E7000CBADE /* MainStoryboard_iPhone.storyboard */,
+				81E3EA491878DE1C006FACCE /* Clothing.h */,
+				81E3EA4A1878DE1C006FACCE /* Clothing.m */,
 			);
 			path = ProximitySampleApp;
 			sourceTree = "<group>";
@@ -312,6 +335,15 @@
 		C002FED31795F3E7000CBADE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81E3EA4E1878ECAB006FACCE /* Dress.png */,
+				81E3EA4F1878ECAB006FACCE /* Skirt.png */,
+				81E3EA501878ECAB006FACCE /* LongSleeveShirt.png */,
+				81E3EA511878ECAB006FACCE /* Accessory.png */,
+				81E3EA521878ECAB006FACCE /* Jacket.png */,
+				81E3EA531878ECAB006FACCE /* Short.png */,
+				81E3EA541878ECAB006FACCE /* Pant.png */,
+				81E3EA551878ECAB006FACCE /* Sweater.png */,
+				81E3EA4C1878E881006FACCE /* TShirt.png */,
 				C002FFC217960BFF000CBADE /* Avatars */,
 				C002FEEE1795F3E7000CBADE /* background.png */,
 				C002FEEF1795F3E7000CBADE /* background@2x.png */,
@@ -527,10 +559,12 @@
 				C002FF691795F3E7000CBADE /* background.png in Resources */,
 				C002FF6A1795F3E7000CBADE /* background@2x.png in Resources */,
 				C002FF6B1795F3E7000CBADE /* bar_full.png in Resources */,
+				81E3EA5C1878ECAB006FACCE /* Pant.png in Resources */,
 				C002FF6C1795F3E7000CBADE /* bar_full@2x.png in Resources */,
 				C002FF6D1795F3E7000CBADE /* bar_track_full.png in Resources */,
 				C002FF6E1795F3E7000CBADE /* bar_track_full@2x.png in Resources */,
 				C002FF6F1795F3E7000CBADE /* battery_full.png in Resources */,
+				81E3EA591878ECAB006FACCE /* Accessory.png in Resources */,
 				C002FF701795F3E7000CBADE /* battery_full@2x.png in Resources */,
 				C002FF711795F3E7000CBADE /* battery_high.png in Resources */,
 				C002FF721795F3E7000CBADE /* battery_high@2x.png in Resources */,
@@ -538,6 +572,7 @@
 				C002FF741795F3E7000CBADE /* battery_low@2x.png in Resources */,
 				C002FF751795F3E7000CBADE /* battery_med.png in Resources */,
 				C002FF761795F3E7000CBADE /* battery_med@2x.png in Resources */,
+				81E3EA561878ECAB006FACCE /* Dress.png in Resources */,
 				C002FF7D1795F3E7000CBADE /* btn_nav.png in Resources */,
 				C002FF7E1795F3E7000CBADE /* btn_nav@2x.png in Resources */,
 				C002FF811795F3E7000CBADE /* Default-568h@2x.png in Resources */,
@@ -564,16 +599,22 @@
 				C002FF9E1795F3E7000CBADE /* spinner_06.png in Resources */,
 				C002FF9F1795F3E7000CBADE /* spinner_06@2x.png in Resources */,
 				C002FFA01795F3E7000CBADE /* spinner_07.png in Resources */,
+				81E3EA5A1878ECAB006FACCE /* Jacket.png in Resources */,
 				C002FFA11795F3E7000CBADE /* spinner_07@2x.png in Resources */,
 				C002FFA21795F3E7000CBADE /* spinner_08.png in Resources */,
+				81E3EA5D1878ECAB006FACCE /* Sweater.png in Resources */,
+				81E3EA571878ECAB006FACCE /* Skirt.png in Resources */,
 				C002FFA31795F3E7000CBADE /* spinner_08@2x.png in Resources */,
 				C002FFA41795F3E7000CBADE /* spinner_09.png in Resources */,
 				C002FFA51795F3E7000CBADE /* spinner_09@2x.png in Resources */,
 				C002FFA61795F3E7000CBADE /* spinner_10.png in Resources */,
 				C002FFA71795F3E7000CBADE /* spinner_10@2x.png in Resources */,
+				81E3EA581878ECAB006FACCE /* LongSleeveShirt.png in Resources */,
 				C002FFA81795F3E7000CBADE /* spinner_11.png in Resources */,
+				81E3EA5B1878ECAB006FACCE /* Short.png in Resources */,
 				C002FFA91795F3E7000CBADE /* spinner_11@2x.png in Resources */,
 				C002FFAA1795F3E7000CBADE /* spinner_12.png in Resources */,
+				81E3EA4D1878E881006FACCE /* TShirt.png in Resources */,
 				C002FFAB1795F3E7000CBADE /* spinner_12@2x.png in Resources */,
 				C002FFAD1795F3E7000CBADE /* ProximitySampleApp-Info.plist in Resources */,
 				C002FFAF1795F3E7000CBADE /* Settings.bundle in Resources */,
@@ -594,6 +635,7 @@
 				C002FFAE1795F3E7000CBADE /* ProximitySampleUserSettingsRepository.m in Sources */,
 				C002FFB01795F3E7000CBADE /* SightingsTableViewCell.m in Sources */,
 				C002FFB11795F3E7000CBADE /* SightingsTableViewController.m in Sources */,
+				81E3EA4B1878DE1C006FACCE /* Clothing.m in Sources */,
 				C002FFB21795F3E7000CBADE /* Transmitter.m in Sources */,
 				C002FFB31795F3E7000CBADE /* UserSettingsRepository.m in Sources */,
 			);
@@ -693,7 +735,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks\"","\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"","\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
+					"\"$(SRCROOT)/../../Frameworks\"",
+					"\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"",
+					"\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
@@ -710,7 +754,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks\"","\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"","\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
+					"\"$(SRCROOT)/../../Frameworks\"",
+					"\"$(SRCROOT)/../../Frameworks/Common.embeddedframework\"",
+					"\"$(SRCROOT)/../../Frameworks/NetworkServices.embeddedframework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProximitySampleApp/ProximitySampleApp-Prefix.pch";
