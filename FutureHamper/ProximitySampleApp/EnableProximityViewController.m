@@ -121,7 +121,7 @@
 - (void)setupNavigationBar
 {
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_tile.png"] forBarMetrics:UIBarMetricsDefault];
-    NSDictionary *navbarTitleTextAttribs = [NSDictionary dictionaryWithObjectsAndKeys:                                               [UIColor whiteColor],UITextAttributeTextColor, nil];
+    NSDictionary *navbarTitleTextAttribs = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil];
     [self.navigationBar setTitleTextAttributes: navbarTitleTextAttribs];
 }
 
