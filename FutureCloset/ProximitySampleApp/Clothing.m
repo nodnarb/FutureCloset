@@ -118,84 +118,112 @@ static NSMutableArray *theClothes = nil;
     if([transmitter.name isEqualToString:@"Beacon 1"]) {
         self.name = @"Generic Gray T-Shirt";
         self.color = Black;
+        self.lastWornDate = @"Jan 02, 2014";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:TShirt];
     }
     
     if([transmitter.name isEqualToString:@"Beacon 2"]) {
         self.name = @"Hoodie";
         self.color = Black;
+        self.lastWornDate = @"Dec 30, 2013";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:Jacket];
     }
     
     if([transmitter.name isEqualToString:@"Beacon 3"]) {
         self.name = @"U MAD BRO?";
         self.color = Black;
+        self.lastWornDate = @"Jan 05, 2014";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:T-Shirt];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 4"]) {
         self.name = @"Ugly Christmas Sweater";
         self.color = Green;
+        self.lastWornDate = @"Dec 25, 2013";
+        self.numberFriendsWearing = 3;
         [self setDefaultsForType:Sweater]
     }
 
     if([transmitter.name isEqualToString:@"Beacon 5"]) {
         self.name = @"Orange Sweater";
         self.color = Orange;
+        self.lastWornDate = @"Dec 07, 2013";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:Sweater];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 6"]) {
         self.name = @"Pokemon Master Hat";
-        self.color = Yellow;
+        self.color = Red;
+        self.lastWornDate = @"Dec 12, 2013";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:Accessory];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 7"]) {
         self.name = @"Ratty Shirt";
         self.color = Orange;
+        self.lastWornDate = @"Dec 02, 2013";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:TShirt];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 8"]) {
         self.name = @"Cynthia's Panties";
         self.color = Purple;
+        self.lastWornDate = @"Dec 04, 2013";
+        self.numberFriendsWearing = 1;
         [self setDefaultsForType:Short];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 9"]) {
         self.name = @"Lucy's Panties";
         self.color = Pink;
+        self.lastWornDate = @"Dec 04, 2013";
+        self.numberFriendsWearing = 1;
         [self setDefaultsForType:Short];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 10"]) {
         self.name = @"Hero of Time Tunic";
         self.color = Green;
+        self.lastWornDate = @"Dec 23, 2013";
+        self.numberFriendsWearing = 1;
         [self setDefaultsForType:LongSleeveShirt];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 11"]) {
         self.name = @"Jeans";
         self.color = Black;
+        self.lastWornDate = @"Jan 02, 2014";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:Pant];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 12"]) {
         self.name = @"Tight Red Pants";
         self.color = Red;
+        self.lastWornDate = @"Dec 29, 2013";
+        self.numberFriendsWearing = 0;
         [self setDefaultsForType:Pant];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 13"]) {
-        self.name = @"BATMAN JAMMIES!!!";
+        self.name = @"BATMAN JAMMIES!";
         self.color = Black;
+        self.lastWornDate = @"Jan 01, 2014";
+        self.numberFriendsWearing = 9000;
         [self setDefaultsForType:Dress];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 14"]) {
         self.name = @"Scarf";
         self.color = Red;
+        self.lastWornDate = @"Dec 14, 2013";
+        self.numberFriendsWearing = 1;
         [self setDefaultsForType:Accessory];
     }
 
