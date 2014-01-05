@@ -116,8 +116,8 @@ static NSMutableArray *theClothes = nil;
     _transmitter = transmitter;
     
     if([transmitter.name isEqualToString:@"Beacon 1"]) {
-        self.name = @"Favorite Shirt";
-        self.color = Blue;
+        self.name = @"Generic Gray T-Shirt";
+        self.color = Black;
         [self setDefaultsForType:TShirt];
     }
     
@@ -128,21 +128,21 @@ static NSMutableArray *theClothes = nil;
     }
     
     if([transmitter.name isEqualToString:@"Beacon 3"]) {
-        self.name = @"Dress";
-        self.color = Red;
-        [self setDefaultsForType:Dress];
+        self.name = @"U MAD BRO?";
+        self.color = Black;
+        [self setDefaultsForType:T-Shirt];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 4"]) {
         self.name = @"Ugly Christmas Sweater";
         self.color = Green;
-        [self setDefaultsForType:Sweater];
+        [self setDefaultsForType:Sweater]
     }
 
     if([transmitter.name isEqualToString:@"Beacon 5"]) {
-        self.name = @"Plaid Hoodie";
-        self.color = Purple;
-        [self setDefaultsForType:Jacket];
+        self.name = @"Orange Sweater";
+        self.color = Orange;
+        [self setDefaultsForType:Sweater];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 6"]) {
@@ -182,15 +182,15 @@ static NSMutableArray *theClothes = nil;
     }
 
     if([transmitter.name isEqualToString:@"Beacon 12"]) {
-        self.name = @"Yellow Shirt";
-        self.color = Yellow;
-        [self setDefaultsForType:LongSleeveShirt];
+        self.name = @"Tight Red Pants";
+        self.color = Red;
+        [self setDefaultsForType:Pant];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 13"]) {
-        self.name = @"Shorts";
-        self.color = Purple;
-        [self setDefaultsForType:Short];
+        self.name = @"BATMAN JAMMIES!!!";
+        self.color = Black;
+        [self setDefaultsForType:Dress];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 14"]) {
