@@ -38,7 +38,7 @@ try {
     // if you want to post content directly to this service, it can be accessed in 3 ways:
     String serial = parameters.serial
     String command = parameters.command
-    def legalCommands = ["SMS","MMSI","MMSA","TTS"]
+    def legalCommands = ["HAM","MMSI","MMSA","TTS"]
     String modelNumber = "KONTRON_M2MDev"
 
     logger.info "Found command: $command"
@@ -70,31 +70,29 @@ try {
     def success = false
     // we have a valid command arg, so process
     outputString.append("{\n")
+    logger.info "Found something"
     switch (cmd) {
-        case "SMS":
-            logger.info "Found SMS"
+        case "HAM":
+            logger.info "Found HAM"
 
-            if (args.size()==3) {
+            if (args.size()==2) {
                 // we're good, otherwise error out
-                def params = ["message":args[2],"target":args[1]]
-                def response = (Map)Bridges.customObjectBridge.execute("vgs_SendSMS",params)
+                def params = ["message":args[1]]
+                def response = (Map)Bridges.customObjectBridge.execute("rocket_vgs_SendSMS",params)
                 // response has 2 elements, Content and Content-Type
                 def jsonString = response.Content
                 def json = new JsonSlurper().parseText(jsonString)
-                if (json.Status == "SMS Sent") {
+                if (json.Status == "HAM Sent") {
                     // we're OK
-                    result = "SMS Sent"
+                    result = "HAM Sent"
                     outputString.append("  \"status\": \"${result}\",\n")
                 } else {
                     // we have failed, get the info from it
-                    result = "SMS Send Failed: ${json?.Status}, ${json?.Message}, ${json?.Target}"
+                    result = "HAM Send Failed: ${json?.Status}, ${json?.Message}"
                     outputString.append("  \"error\": \"${result}\",\n")
-                    // create an alarm
-                    def alarmName = "SMS Not sent. Is ${json?.Target} a valid AT&T phone number?"
-                    createAlarmEntry(CONTEXT,alarmName,d,100)
                 }
             } else {
-                result = "Expecting 3 args for SMS: SMS|TargetNum|Message"
+                result = "Expecting 2 args for HAM: HAM|Message"
                 outputString.append("  \"error\": \"${result}\",\n")
             }
             break;

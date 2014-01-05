@@ -4,76 +4,6 @@
 -->
 <apcmetadata>
 	<customobjects>
-		<customobject>
-			<name>rocket_vgs_GetDataItems</name>
-			<type>Action</type>
-			<sourcefile>com/axeda/innovation/rocket_vgs_GetDataItems.groovy</sourcefile>
-		</customobject>
-        <customobject>
-            <name>rocket_vgs_ListDataItems</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_ListDataItems.groovy</sourcefile>
-        </customobject>
-		<customobject>
-            <name>rocket_vgs_GetDeviceStatus</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_GetDeviceStatus.groovy</sourcefile>
-			<params>
-				<param name="modelNumber" description="(OPTIONAL) Str - model number of the asset" />
-				<param name="serialNumber" description="(OPTIONAL) Str - serial number of the asset" />
-			</params>
-        </customobject>
-        <customobject>
-            <name>rocket_vgs_GetSettings</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_GetSettings.groovy</sourcefile>
-        </customobject>
-        <customobject>
-            <name>rocket_vgs_UpdateSettings</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_UpdateSettings.groovy</sourcefile>
-        </customobject>
-		<customobject>
-            <name>rocket_vgs_GetLocation</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_GetLocation.groovy</sourcefile>
-        </customobject>
-		<customobject>
-            <name>rocket_vgs_StoreFile</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_StoreFile.groovy</sourcefile>
-			<params>
-				<param name="filelabel" description="(OPTIONAL) Str - label for the file" />
-				<param name="description" description="(OPTIONAL) Str - description of the file" />
-				<param name="tag" description="(OPTIONAL) Str - tag of the file" />
-				<param name="encoded" description="(OPTIONAL) Bool - whether the file is encoded" />
-				<param name="multi" description="(OPTIONAL) Bool - multi instance mode is enabled" />
-				<param name="dimlimit" description="(OPTIONAL) Integer - limit on image height or width" />
-			</params>
-        </customobject>
-		<customobject>
-            <name>rocket_vgs_DownloadFile</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_DownloadFile.groovy</sourcefile>
-			<params>
-				<param name="fileId" description="id of the file to download" />
-			</params>
-        </customobject>
-		<customobject>
-            <name>rocket_vgs_GetLastFile</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_GetLastFile.groovy</sourcefile>
-        </customobject>
-        <customobject>
-            <name>rocket_vgs_GetOauthToken</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/utility/rocket_vgs_GetOauthToken.groovy</sourcefile>
-        </customobject>
-        <customobject>
-            <name>rocket_vgs_SendDownstreamCmd</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_SendDownstreamCmd.groovy</sourcefile>
-        </customobject>
         <customobject>
             <name>rocket_vgs_ProcessUpstreamCmd</name>
             <type>Action</type>
@@ -81,15 +11,6 @@
             <params>
                 <param name="serial" description="The serial number for the device" />
                 <param name="command" description="The value of the command being sent up" />
-            </params>
-        </customobject>
-        <customobject>
-            <name>rocket_vgs_SetLocation</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_SetLocation.groovy</sourcefile>
-            <params>
-                <param name="serial" description="The serial number for the device" />
-                <param name="location" description="The lat/long for the Device" />
             </params>
         </customobject>
         <customobject>
@@ -101,38 +22,6 @@
             <name>rocket_vgs_SendMMS</name>
             <type>Action</type>
             <sourcefile>com/axeda/innovation/rocket_vgs_SendMMS.groovy</sourcefile>
-        </customobject>
-        <customobject>
-            <name>rocket_vgs_TextToSpeech</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_TextToSpeech.groovy</sourcefile>
-        </customobject>
-
-		<customobject>
-            <name>rocket_vgs_CloseAlarms</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_CloseAlarms.groovy</sourcefile>
-			<params>
-				<param name="alarmname" description="name of the alarm to close" />
-			</params>
-        </customobject>
-		<customobject>
-            <name>rocket_vgs_GetAlarms</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_GetAlarms.groovy</sourcefile>
-			<params/>
-        </customobject>
-        <customobject>
-            <name>rocket_vgs_Debug</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_Debug.groovy</sourcefile>
-            <params/>
-        </customobject>
-		<customobject>
-            <name>rocket_vgs_AlarmCycle</name>
-            <type>Action</type>
-            <sourcefile>com/axeda/innovation/rocket_vgs_AlarmCycle.groovy</sourcefile>
-			<params/>
         </customobject>
 <!--
     The (optional) installOn attribute instructs the Artisan installer to install the custom object only only during the

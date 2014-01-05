@@ -1,7 +1,7 @@
 var ax_app = {
 	PLATFORM_HOST : document.URL.split('/apps/')[0],
     defaultModelName: 'KONTRON_M2MDev',
-    defaultSerialNumber: '999912345678',
+    defaultSerialNumber: '16820870',
     appjson: null,
     editing: false,
 	debug:null,
