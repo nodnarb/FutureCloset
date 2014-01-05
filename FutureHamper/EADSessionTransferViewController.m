@@ -130,7 +130,7 @@
 
     EADSessionController *sessionController = [EADSessionController sharedController];
 
-    _accessory = [[sessionController accessory] retain];
+    _accessory = [sessionController accessory];
     [self setTitle:[sessionController protocolString]];
     [sessionController openSession];
 }
@@ -144,7 +144,6 @@
     EADSessionController *sessionController = [EADSessionController sharedController];
 
     [sessionController closeSession];
-    [_accessory release];
     _accessory = nil;
 }
 

@@ -55,10 +55,6 @@
 
 @implementation RootViewController
 
-- (void)dealloc
-{
-	[super dealloc];
-}
 
 - (void)viewDidLoad {
     // Create the view that gets shown when no accessories are connected
@@ -90,17 +86,12 @@
 - (void)viewDidUnload {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:EAAccessoryDidConnectNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:EAAccessoryDidDisconnectNotification object:nil];
-    [_accessoryList release];
     _accessoryList = nil;
 
-    [_selectedAccessory release];
     _selectedAccessory = nil;
 
-    [_protocolSelectionActionSheet release];
     _protocolSelectionActionSheet = nil;
 
-    [_noExternalAccessoriesPosterView release];
-    [_noExternalAccessoriesLabelView release];
 
     [super viewDidUnload];
 }
@@ -117,12 +108,9 @@
             [[EADSessionTransferViewController alloc] initWithNibName:@"EADSessionTransfer" bundle:nil];
 
         [[self navigationController] pushViewController:sessionTransferViewController animated:YES];
-        [sessionTransferViewController release];
     }
 
-    [_selectedAccessory release];
     _selectedAccessory = nil;
-    [_protocolSelectionActionSheet release];
     _protocolSelectionActionSheet = nil;
 }
 
@@ -147,7 +135,7 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:eaAccessoryCellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:eaAccessoryCellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:eaAccessoryCellIdentifier];
     }
 
     NSString *eaAccessoryName = [[_accessoryList objectAtIndex:row] name];
@@ -165,7 +153,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = [indexPath row];
 
-    _selectedAccessory = [[_accessoryList objectAtIndex:row] retain];
+    _selectedAccessory = [_accessoryList objectAtIndex:row];
 
     _protocolSelectionActionSheet = [[UIActionSheet alloc] initWithTitle:@"Select Protocol" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles: nil];
     NSArray *protocolStrings = [_selectedAccessory protocolStrings];
