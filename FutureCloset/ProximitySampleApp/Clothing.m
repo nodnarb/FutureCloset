@@ -87,6 +87,72 @@
         self.color = Red;
         [self setDefaultsForType:Dress];
     }
+
+    if([transmitter.name isEqualToString:@"Beacon 4"]) {
+        self.name = @"Ugly Christmas Sweater";
+        self.color = Green;
+        [self setDefaultsForType:Sweater];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 5"]) {
+        self.name = @"Plaid Hoodie";
+        self.color = White;
+        [self setDefaultsForType:Jacket];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 6"]) {
+        self.name = @"Pokemon Master Hat";
+        self.color = Yellow;
+        [self setDefaultsForType:Accessory];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 7"]) {
+        self.name = @"Ratty Shirt";
+        self.color = Orange;
+        [self setDefaultsForType:TShirt];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 8"]) {
+        self.name = @"Cynthia's Panties";
+        self.color = Purple;
+        [self setDefaultsForType:Short];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 9"]) {
+        self.name = @"Lucy's Panties";
+        self.color = Pink;
+        [self setDefaultsForType:Short];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 10"]) {
+        self.name = @"Hero of Time Tunic";
+        self.color = Green;
+        [self setDefaultsForType:LongSleeveShirt];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 11"]) {
+        self.name = @"Jeans";
+        self.color = Black;
+        [self setDefaultsForType:Pant];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 12"]) {
+        self.name = @"Yellow Shirt";
+        self.color = Yellow;
+        [self setDefaultsForType:LongSleeveShirt];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 13"]) {
+        self.name = @"Shorts";
+        self.color = Purple;
+        [self setDefaultsForType:Short];
+    }
+
+    if([transmitter.name isEqualToString:@"Beacon 14"]) {
+        self.name = @"Scarf";
+        self.color = Red;
+        [self setDefaultsForType:Accessory];
+    }
     
     [self updateImageForColor];
 }
