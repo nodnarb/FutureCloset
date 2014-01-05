@@ -88,7 +88,7 @@
 			<key>Key</key>
 			<string>rssi_bar_max_value</string>
 			<key>DefaultValue</key>
-			<string>-60</string>
+			<string>-30</string>
 			<key>KeyboardType</key>
 			<string>NumberPad</string>
 		</dict>
