@@ -113,15 +113,18 @@
 
 - (void)finalizeUITheming {
     // Set the nav bar's background image
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_tile.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTranslucent:NO];
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_tile.png"] forBarMetrics:UIBarMetricsDefault];
+    //[self.navigationController.navigationBar setTranslucent:NO];
     
     // Replace the nav bar's title text with a custom image view
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_binoculars.png"]];
-    [self.navigationController.navigationBar.topItem setTitleView:imageView];
+    //UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_binoculars.png"]];
+    //[self.navigationController.navigationBar.topItem setTitleView:imageView];
+    self.title = @"FutureThreadz";
+    
+    self.navigationController.toolbarHidden = false;
     
     // Set the nav bar button background images
-    [self.refreshBarButton setBackgroundImage:[UIImage imageNamed:@"btn_nav.png"]forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    //[self.refreshBarButton setBackgroundImage:[UIImage imageNamed:@"btn_nav.png"]forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     [self hideNoTransmittersView];
 }

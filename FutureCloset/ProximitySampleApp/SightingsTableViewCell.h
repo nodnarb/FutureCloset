@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *batteryImageView;
 @property (weak, nonatomic) IBOutlet UILabel *temperature;
 @property (weak, nonatomic) IBOutlet UILabel *rssiLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *proximityView;
 
 
 @property (nonatomic) BOOL isGrayedOut;
