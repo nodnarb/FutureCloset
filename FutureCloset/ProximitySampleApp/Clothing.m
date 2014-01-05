@@ -82,7 +82,29 @@ static NSMutableArray *theClothes = nil;
             name = @"T-Shirt";
             break;
         case Sweater:
-            
+            name = @"Sweater";
+            break;
+        case Pant:
+            name = @"Pant";
+            break;
+        case Short:
+            name = @"Short";
+            break;
+        case Jacket:
+            name = @"Jacket";
+            break;
+        case Accessory:
+            name = @"Accessory";
+            break;
+        case LongSleeveShirt:
+            name = @"Long Sleeve Shirt";
+            break;
+        case Skirt:
+            name = @"Skirt";
+            break;
+        case Dress:
+            name = @"Dress";
+            break;
         default:
             break;
     }
