@@ -106,6 +106,11 @@
 		CA2864251878D68100AF92D8 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2864241878D68100AF92D8 /* FYX.framework */; };
 		CA2864271878D6A100AF92D8 /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2864261878D6A100AF92D8 /* NetworkServices.framework */; };
 		CA2864291878D6B300AF92D8 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2864281878D6B300AF92D8 /* Common.framework */; };
+		CA2864321878E67400AF92D8 /* EADemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA28642B1878E67400AF92D8 /* EADemoAppDelegate.m */; };
+		CA2864331878E67400AF92D8 /* EADSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA28642D1878E67400AF92D8 /* EADSessionController.m */; };
+		CA2864341878E67400AF92D8 /* EADSessionTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA28642F1878E67400AF92D8 /* EADSessionTransferViewController.m */; };
+		CA2864351878E67400AF92D8 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2864311878E67400AF92D8 /* RootViewController.m */; };
+		CA2864371878E7C900AF92D8 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2864361878E7C900AF92D8 /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,6 +228,15 @@
 		CA2864241878D68100AF92D8 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FYX.framework; sourceTree = "<group>"; };
 		CA2864261878D6A100AF92D8 /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 		CA2864281878D6B300AF92D8 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		CA28642A1878E67400AF92D8 /* EADemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EADemoAppDelegate.h; sourceTree = "<group>"; };
+		CA28642B1878E67400AF92D8 /* EADemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EADemoAppDelegate.m; sourceTree = "<group>"; };
+		CA28642C1878E67400AF92D8 /* EADSessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EADSessionController.h; sourceTree = "<group>"; };
+		CA28642D1878E67400AF92D8 /* EADSessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EADSessionController.m; sourceTree = "<group>"; };
+		CA28642E1878E67400AF92D8 /* EADSessionTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EADSessionTransferViewController.h; sourceTree = "<group>"; };
+		CA28642F1878E67400AF92D8 /* EADSessionTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EADSessionTransferViewController.m; sourceTree = "<group>"; };
+		CA2864301878E67400AF92D8 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		CA2864311878E67400AF92D8 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		CA2864361878E7C900AF92D8 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2864371878E7C900AF92D8 /* ExternalAccessory.framework in Frameworks */,
 				CA2864291878D6B300AF92D8 /* Common.framework in Frameworks */,
 				C07F711C17285CF50051F55D /* libz.dylib in Frameworks */,
 				CA2864271878D6A100AF92D8 /* NetworkServices.framework in Frameworks */,
@@ -268,6 +283,7 @@
 		9A89197A15FFBEE400556B6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA2864361878E7C900AF92D8 /* ExternalAccessory.framework */,
 				CA2864281878D6B300AF92D8 /* Common.framework */,
 				CA2864261878D6A100AF92D8 /* NetworkServices.framework */,
 				CA2864241878D68100AF92D8 /* FYX.framework */,
@@ -285,6 +301,14 @@
 		C002FEC21795F3E7000CBADE /* ProximitySampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				CA28642A1878E67400AF92D8 /* EADemoAppDelegate.h */,
+				CA28642B1878E67400AF92D8 /* EADemoAppDelegate.m */,
+				CA28642C1878E67400AF92D8 /* EADSessionController.h */,
+				CA28642D1878E67400AF92D8 /* EADSessionController.m */,
+				CA28642E1878E67400AF92D8 /* EADSessionTransferViewController.h */,
+				CA28642F1878E67400AF92D8 /* EADSessionTransferViewController.m */,
+				CA2864301878E67400AF92D8 /* RootViewController.h */,
+				CA2864311878E67400AF92D8 /* RootViewController.m */,
 				C002FEC31795F3E7000CBADE /* AppDelegate.h */,
 				C002FEC41795F3E7000CBADE /* AppDelegate.m */,
 				C002FEC51795F3E7000CBADE /* ApplicationContext.h */,
@@ -596,11 +620,15 @@
 				C002FF461795F3E7000CBADE /* ApplicationContext.m in Sources */,
 				C002FF4E1795F3E7000CBADE /* EnableProximityViewController.m in Sources */,
 				C002FFAC1795F3E7000CBADE /* main.m in Sources */,
+				CA2864331878E67400AF92D8 /* EADSessionController.m in Sources */,
 				C002FFAE1795F3E7000CBADE /* ProximitySampleUserSettingsRepository.m in Sources */,
 				C002FFB01795F3E7000CBADE /* SightingsTableViewCell.m in Sources */,
 				C002FFB11795F3E7000CBADE /* SightingsTableViewController.m in Sources */,
+				CA2864321878E67400AF92D8 /* EADemoAppDelegate.m in Sources */,
 				C002FFB21795F3E7000CBADE /* Transmitter.m in Sources */,
+				CA2864351878E67400AF92D8 /* RootViewController.m in Sources */,
 				C002FFB31795F3E7000CBADE /* UserSettingsRepository.m in Sources */,
+				CA2864341878E67400AF92D8 /* EADSessionTransferViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
