@@ -199,6 +199,7 @@
             CGRect oldFrame = sightingsCell.rssiImageView.frame;
             sightingsCell.rssiImageView.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, 0, oldFrame.size.height);
             sightingsCell.isGrayedOut = YES;
+            sightingsCell.lastWornLabel.text = @"DIRTY";
         });
     }
 }
@@ -366,7 +367,7 @@
         NSString *imageFilename = [NSString stringWithFormat:@"avatar_%02d.png", avatarID];
         //cell.transmitterIcon.image = [UIImage imageNamed:imageFilename];
         
-        if ([self isTransmitterAgedOut:transmitter]) {
+        if (cloth.dirty) {
             [self grayOutSightingsCell:cell];
         } else {
             [self updateSightingsCell:cell withTransmitter:transmitter];
@@ -436,6 +437,13 @@
         [self.tableView reloadData];
     }
     
+    Clothing *clothes = nil;
+    for(Clothing *c in self.clothesArray) {
+        if(c.transmitter == transmitter) {
+            clothes = c;
+        }
+    }
+    
     transmitter.lastSighted = updateTime;
     if([self shouldUpdateTransmitterCell:visit withTransmitter:transmitter RSSI:RSSI]){
         [self updateTransmitter:transmitter withVisit:visit  RSSI:RSSI];
@@ -449,6 +457,11 @@
                 transmitter.previousRSSI =  [self rssiForBarWidth:[tempLayer frame].size.width];
                 
                 [self updateSightingsCell:sightingsCell withTransmitter:transmitter];
+                if (clothes.dirty) {
+                    [self grayOutSightingsCell:sightingsCell];
+                } else {
+                    [self updateSightingsCell:sightingsCell withTransmitter:transmitter];
+                }
             }
         }
     }

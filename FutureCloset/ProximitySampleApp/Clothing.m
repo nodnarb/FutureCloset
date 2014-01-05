@@ -121,6 +121,7 @@ static NSMutableArray *theClothes = nil;
         self.lastWornDate = @"Jan 02, 2014";
         self.numberFriendsWearing = 0;
         [self setDefaultsForType:TShirt];
+        self.dirty = YES;
     }
     
     if([transmitter.name isEqualToString:@"Beacon 2"]) {
