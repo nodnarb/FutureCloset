@@ -48,8 +48,10 @@
  */
 
 #import <ExternalAccessory/ExternalAccessory.h>
+#import <FYX/FYXSightingManager.h>
+#import <FYX/FYXVisitManager.h>
 
-@interface EADSessionTransferViewController : UIViewController <UITextFieldDelegate> {
+@interface EADSessionTransferViewController : UIViewController <UITextFieldDelegate, FYXVisitDelegate> {
     EAAccessory *_accessory;
     UILabel *_receivedBytesLabel;
     UITextField *_stringToSendTextField;

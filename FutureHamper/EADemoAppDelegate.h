@@ -47,7 +47,9 @@
  
  */
 
-@interface EADemoAppDelegate : NSObject <UIApplicationDelegate> {
+#import <FYX/FYX.h>
+
+@interface EADemoAppDelegate : NSObject <UIApplicationDelegate, FYXServiceDelegate> {
     
     UIWindow *window;
     UINavigationController *navigationController;

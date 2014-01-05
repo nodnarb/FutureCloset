@@ -27,6 +27,16 @@
 		C986345F0FB66A3500D461F2 /* EADemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C986345E0FB66A3500D461F2 /* EADemoAppDelegate.m */; };
 		C9E1AAB6104EBA61002BECB8 /* EADSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E1AAB5104EBA61002BECB8 /* EADSessionController.m */; };
 		C9E1AB2E104EF18F002BECB8 /* EADSessionTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E1AB2D104EF18F002BECB8 /* EADSessionTransferViewController.m */; };
+		CAEDCB9C187904C500374AF5 /* ApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEDCB9B187904C500374AF5 /* ApplicationContext.m */; };
+		CAEDCB9E1879063D00374AF5 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDCB9D1879063D00374AF5 /* Common.framework */; };
+		CAEDCBA01879064400374AF5 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDCB9F1879064400374AF5 /* FYX.framework */; };
+		CAEDCBA21879064D00374AF5 /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDCBA11879064D00374AF5 /* NetworkServices.framework */; };
+		CAEDCBA5187909DE00374AF5 /* UserSettingsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEDCBA4187909DE00374AF5 /* UserSettingsRepository.m */; };
+		CAEDCBA718790E7200374AF5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDCBA618790E7200374AF5 /* Security.framework */; };
+		CAEDCBA918790E8D00374AF5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDCBA818790E8D00374AF5 /* libz.dylib */; };
+		CAEDCBAB18790EAA00374AF5 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDCBAA18790EAA00374AF5 /* CoreBluetooth.framework */; };
+		CAEDCBAD18790EB100374AF5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDCBAC18790EB100374AF5 /* CoreLocation.framework */; };
+		CAEDCBB0187912E400374AF5 /* Transmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEDCBAF187912E400374AF5 /* Transmitter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +67,19 @@
 		C9E1AAB5104EBA61002BECB8 /* EADSessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EADSessionController.m; sourceTree = "<group>"; };
 		C9E1AB2C104EF18F002BECB8 /* EADSessionTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EADSessionTransferViewController.h; sourceTree = "<group>"; };
 		C9E1AB2D104EF18F002BECB8 /* EADSessionTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EADSessionTransferViewController.m; sourceTree = "<group>"; };
+		CAEDCB9A187904C500374AF5 /* ApplicationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationContext.h; sourceTree = "<group>"; };
+		CAEDCB9B187904C500374AF5 /* ApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationContext.m; sourceTree = "<group>"; };
+		CAEDCB9D1879063D00374AF5 /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		CAEDCB9F1879064400374AF5 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FYX.framework; sourceTree = "<group>"; };
+		CAEDCBA11879064D00374AF5 /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		CAEDCBA3187909DE00374AF5 /* UserSettingsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsRepository.h; sourceTree = "<group>"; };
+		CAEDCBA4187909DE00374AF5 /* UserSettingsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsRepository.m; sourceTree = "<group>"; };
+		CAEDCBA618790E7200374AF5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CAEDCBA818790E8D00374AF5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CAEDCBAA18790EAA00374AF5 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CAEDCBAC18790EB100374AF5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CAEDCBAE187912E400374AF5 /* Transmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transmitter.h; sourceTree = "<group>"; };
+		CAEDCBAF187912E400374AF5 /* Transmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transmitter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +87,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEDCBAD18790EB100374AF5 /* CoreLocation.framework in Frameworks */,
+				CAEDCBAB18790EAA00374AF5 /* CoreBluetooth.framework in Frameworks */,
+				CAEDCBA918790E8D00374AF5 /* libz.dylib in Frameworks */,
+				CAEDCBA718790E7200374AF5 /* Security.framework in Frameworks */,
+				CAEDCBA01879064400374AF5 /* FYX.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				CAEDCBA21879064D00374AF5 /* NetworkServices.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				CAEDCB9E1879063D00374AF5 /* Common.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				C952826C0FB397D500E6CF4C /* ExternalAccessory.framework in Frameworks */,
 			);
@@ -85,6 +115,12 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				CAEDCBAE187912E400374AF5 /* Transmitter.h */,
+				CAEDCBAF187912E400374AF5 /* Transmitter.m */,
+				CAEDCBA3187909DE00374AF5 /* UserSettingsRepository.h */,
+				CAEDCBA4187909DE00374AF5 /* UserSettingsRepository.m */,
+				CAEDCB9A187904C500374AF5 /* ApplicationContext.h */,
+				CAEDCB9B187904C500374AF5 /* ApplicationContext.m */,
 				C9E1AAB4104EBA61002BECB8 /* EADSessionController.h */,
 				C9E1AAB5104EBA61002BECB8 /* EADSessionController.m */,
 				C986345D0FB66A3500D461F2 /* EADemoAppDelegate.h */,
@@ -107,6 +143,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAEDCBAC18790EB100374AF5 /* CoreLocation.framework */,
+				CAEDCBAA18790EAA00374AF5 /* CoreBluetooth.framework */,
+				CAEDCBA818790E8D00374AF5 /* libz.dylib */,
+				CAEDCBA618790E7200374AF5 /* Security.framework */,
+				CAEDCBA11879064D00374AF5 /* NetworkServices.framework */,
+				CAEDCB9F1879064400374AF5 /* FYX.framework */,
+				CAEDCB9D1879063D00374AF5 /* Common.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -218,9 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEDCB9C187904C500374AF5 /* ApplicationContext.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				C986345C0FB66A2200D461F2 /* RootViewController.m in Sources */,
+				CAEDCBA5187909DE00374AF5 /* UserSettingsRepository.m in Sources */,
 				C986345F0FB66A3500D461F2 /* EADemoAppDelegate.m in Sources */,
+				CAEDCBB0187912E400374AF5 /* Transmitter.m in Sources */,
 				C9E1AAB6104EBA61002BECB8 /* EADSessionController.m in Sources */,
 				C9E1AB2E104EF18F002BECB8 /* EADSessionTransferViewController.m in Sources */,
 			);
@@ -264,12 +310,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FutureHamper_Prefix.pch;
 				INFOPLIST_FILE = "FutureHamper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = FutureHamper;
 				SDKROOT = iphoneos;
 			};
@@ -283,10 +333,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FutureHamper_Prefix.pch;
 				INFOPLIST_FILE = "FutureHamper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = FutureHamper;
 				SDKROOT = iphoneos;
 			};
@@ -302,6 +356,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
@@ -323,6 +378,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
