@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        apc-metadata.xml
+ -->
+<apcmetadata>
+  <ruleTimers>
+
+    <!-- <ruletimer>
+      <name>string</name>
+      <description>string</description>
+      <schedule>cron expression (for example 0 5 0/24 * * ?)</schedule>
+      <rules>
+        <rule>expression_rule_name</rule>
+      </rules>
+    </ruletimer> -->
+
+  </ruleTimers>
+
+</apcmetadata>

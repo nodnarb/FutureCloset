@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        Sample/customObjects.xml
+-->
+<apcmetadata>
+	
+	<extendedUIModules>
+		
+<!--
+    <extendedUIModule>
+      <title>string</title>
+      <height>int</height>
+      <source>
+        <type>[CUSTOM_APPLICATION|CUSTOM_OBJECT\</type>
+        <name>custom_app_name or custom_object_name depending on the selected type</name>
+      </source>
+    </extendedUIModule>
+-->
+ 
+  </extendedUIModules>
+	
+</apcmetadata>

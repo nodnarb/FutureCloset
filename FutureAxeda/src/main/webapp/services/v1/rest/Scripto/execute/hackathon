@@ -1,0 +1,78 @@
+{
+  "device": {
+    "modelNumber": "aasdasfd",
+    "serialNumber": "aasdfasf",
+    "lastContact": "Wed Jan 12, 2013 12:12:12 PM",
+    "platformStatus": "Connected",
+    "serialStatus": "Connected",
+    "protocolStatus": "Connected"
+  },
+  "application": {
+    "appName": "This test application",
+    "logoURL": "http://www.logologo.com/logos/generic-globe-vector-logo.jpg"
+  },
+  "layout": {
+    "widgets": [
+      {
+        "type": "map",
+        "width": "100",
+        "title": "Map",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "line",
+        "width": "50",
+        "title": "Line",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "pie",
+        "width": "50",
+        "title": "Pie",
+        "dataitemName": "sfgfdfreytegfd"
+      },
+      {
+        "type": "bar",
+        "width": "33",
+        "title": "Bar",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "pie",
+        "width": "33",
+        "title": "Pie",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "image",
+        "width": "33",
+        "title": "Image",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "bar",
+        "width": "25",
+        "title": "Bar",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "line",
+        "width": "25",
+        "title": "Line",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "line",
+        "width": "25",
+        "title": "Line",
+        "dataitemName": "sfgfgfd"
+      },
+      {
+        "type": "map",
+        "width": "25",
+        "title": "Map",
+        "dataitemName": "sfgfgfd"
+      }
+    ]
+  }
+}

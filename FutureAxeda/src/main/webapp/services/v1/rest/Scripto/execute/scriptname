@@ -1,0 +1,46 @@
+{
+    "result": [
+        {
+            "serial_number": "axeKeg1",
+            "model_name": "axeKegDemo",
+            "contact_time": 1361472741428,
+            "data_items": [
+                {
+                    "name": "BeerDesc",
+                    "value": "Light",
+                    "timestamp": 1336406391648
+                },
+                {
+                    "name": "BeerName",
+                    "value": "Harpoon_IPA",
+                    "timestamp": 1336406391886
+                },
+                {
+                    "name": "PourAmount",
+                    "value": "6",
+                    "timestamp": 1336406391952
+                },
+                {
+                    "name": "RemainingBeer",
+                    "value": "50",
+                    "timestamp": 1336406392024
+                },
+                {
+                    "name": "tap",
+                    "value": "01",
+                    "timestamp": 1336406394042
+                },
+                {
+                    "name": "Temp1",
+                    "value": "35",
+                    "timestamp": 1336406394139
+                },
+                {
+                    "name": "Temp2",
+                    "value": "57",
+                    "timestamp": 1336406394247
+                }
+            ]
+        }
+    ]
+}

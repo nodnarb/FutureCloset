@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <groupId>com.axeda.innovation</groupId>
+  <artifactId>vegas2014</artifactId>
+  <name>ATT Hackathon 2014</name>
+  <version>1</version>
+  <packaging>jar</packaging>
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <main-class>com.axeda.provisioner.InstallMain</main-class>
+    <standalone-main-class>com.axeda.provisioner.StandaloneInstallMain</standalone-main-class>
+
+    <failsafe-version>2.14</failsafe-version>
+  </properties>
+
+
+  <repositories>
+    <repository>
+      <id>axeda.platform</id>
+      <url>http://m2m.axeda.com:80/artisan/repo</url>
+    </repository>
+  </repositories>
+
+
+  <!-- Import the versions of the libraries provided by the Axeda Platform. -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.axeda</groupId>
+        <artifactId>artisan-bom</artifactId>
+        <version>6.6.0.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+    <!-- The Artisan Installer is needed to install/uninstall the project to/from the Axeda Platform. -->
+    <dependency>
+      <groupId>com.axeda</groupId>
+      <artifactId>artisan-installer</artifactId>
+      <!-- We want compile scope, because we want it packaged in the standalone jar -->
+      <!-- The version we need is defined in the artisan-bom -->
+    </dependency>
+
+    <!-- Pull in the libraries provided by the Axeda Platform. -->
+    <!-- The third party libraries declared within the artisan-runtime POM are currently available for you to utilize
+         in your code on the Axeda Platform.  These libraries may be removed or upgraded at any time without notice.
+         With each version of the Axeda Platform it is up to you to verify the versions of these libraries and that
+         the code that utilizes these third party libraries complies and functions as expected. These libraries are
+         open source libraries and are subject to the applicable open source license agreement (see open source
+         license notifications at http://help.axeda.com).
+         These libraries are made available on an “as is” basis and are not supported by Axeda. -->
+    <dependency>
+      <groupId>com.axeda</groupId>
+      <artifactId>artisan-runtime</artifactId>
+      <version>6.6.0.1</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- The GMaven runtime plugin is used to compile Groovy test scripts. -->
+    <dependency>
+      <groupId>org.codehaus.gmaven.runtime</groupId>
+      <artifactId>gmaven-runtime-1.8</artifactId>
+      <version>1.4</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.groovy</groupId>
+          <artifactId>groovy-all</artifactId>
+        </exclusion>
+      </exclusions>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- The JUnit plugin is needed to run the unit tests. -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- The Failsafe plugin is needed to run the integration tests. -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-failsafe-plugin</artifactId>
+      <version>${failsafe-version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+
+  <profiles>
+  
+    <!-- The default HelloWorld application is build as a single Maven project. As your project matures,
+         if you find the need to introduce sub-modules, you should un-comment and add the sub-modules
+         to the 'build-modules-by-default' profile below.  Doing so will prevent the sub-modules from being
+         built when executing the 'run-install,' 'run-uninstall,' and 'make-standalone' profiles. -->
+    <!-- <profile>
+      <id>build-modules-by-default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      
+      <modules>
+          <module>your-first-module</module>
+          <module>your-second-module</module>     
+      </modules>
+    </profile> -->
+  
+    <!-- Profile used to install this project to the Axeda platform. -->
+    <profile>
+      <id>run-install</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.1.1</version>
+            <executions>
+              <execution>
+                <id>my-execution</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>java</goal>
+                </goals>
+              </execution>
+            </executions>
+
+            <configuration>
+              <mainClass>${main-class}</mainClass>
+              <arguments>
+                <argument>-f</argument>
+                <argument>artisan.properties</argument>
+                <argument>${installerArgs}</argument>
+              </arguments>
+            </configuration>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <echo>To see the HelloWorld service in action, please visit:</echo>
+                    <echo>http://localhost:8080/services/v1/rest/Scripto/execute/HelloWorld</echo>
+                  </tasks>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- Profile used to uninstall this project from the Axeda platform. -->
+    <profile>
+      <id>run-uninstall</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.1.1</version>
+            <executions>
+              <execution>
+                <id>my-execution</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>java</goal>
+                </goals>
+              </execution>
+            </executions>
+
+            <configuration>
+              <mainClass>${main-class}</mainClass>
+              <arguments>
+                <argument>-f</argument>
+                <argument>artisan.properties</argument>
+                <argument>-uninstall</argument>
+              </arguments>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- Profile used to run tests against the installed project. For use after running mvn package -P run-install -s ~/.m2/axeda-settings.xml. -->
+    <profile>
+      <id>run-tests</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.gmaven</groupId>
+            <artifactId>gmaven-plugin</artifactId>
+            <version>1.4</version>
+
+            <configuration>
+              <source>1.7</source>
+              <providerSelection>1.8</providerSelection>
+            </configuration>
+
+            <executions>
+              <execution>
+                <goals>
+                  <!-- <goal>generateStubs</goal> <goal>compile</goal> -->
+                  <goal>generateTestStubs</goal>
+                  <goal>testCompile</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>${failsafe-version}</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- Profile used to generate a standalone jar that can be used to install your Artisan project code to your Axeda Platform. -->
+    <profile>
+      <id>make-standalone</id>
+      <build>
+        <plugins>
+          <plugin>
+            <!-- This plugin call will copy the Artisan Groovy and metadata -->
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.1.1</version>
+            <executions>
+              <execution>
+                <id>copy-resources-for-standalone</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>java</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <mainClass>com.axeda.provisioner.CopyResourcesForStandaloneUsage</mainClass>
+              <arguments>
+                <argument>-f</argument>
+                <argument>${basedir}/artisan.properties</argument>
+                <argument>-t</argument>
+                <argument>${project.build.outputDirectory}</argument>
+              </arguments>
+            </configuration>
+          </plugin>
+
+          <!-- Now build the assembly. -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>make-standalone-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <descriptors>
+                    <descriptor>${basedir}/src/main/assembly/standalone-assembly.xml</descriptor>
+                  </descriptors>
+                  <archive>
+                    <manifest>
+                      <addClasspath>true</addClasspath>
+                      <mainClass>${standalone-main-class}</mainClass>
+                    </manifest>
+                  </archive>
+                  <appendAssemblyId>true</appendAssemblyId>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+
+
+</project>
