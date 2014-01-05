@@ -29,6 +29,7 @@
 #import "EnableProximityViewController.h"
 #import "Clothing.h"
 #import "ViewController.h"
+#import "ClothingDetailViewController.h"
 
 @interface SightingsTableViewController ()
 
@@ -371,6 +372,15 @@
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Clothing *item = [self.clothesArray objectAtIndex:indexPath.row];
+    ClothingDetailViewController *controller = [[ClothingDetailViewController alloc] initWithNibName:@"ClothingDetailViewController" bundle:nil];
+    [controller setClothing:item];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+    
 }
 
 #pragma mark - FYX visit delegate
