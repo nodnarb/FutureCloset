@@ -54,10 +54,13 @@
 #import <FYX/FYXTransmitterManager.h>
 #import <FYX/FYX.h>
 #import "Transmitter.h"
+#import "M2x.h"
+#import "FeedsClient.h"
 
 @interface EADSessionTransferViewController()
 @property (strong, nonatomic) NSMutableArray *transmitters;
 @property (nonatomic) FYXVisitManager *visitManager;
+@property (nonatomic, strong) FeedsClient *feedsClient;
 @end
 
 @implementation EADSessionTransferViewController
@@ -65,7 +68,9 @@
 @synthesize
     receivedBytesLabel = _receivedBytesLabel,
     stringToSendTextField = _stringToSendTextField,
-    hexToSendTextField = _hexToSendTextField;
+    hexToSendTextField = _hexToSendTextField,
+    feedsClient = _feedsClient;
+
 
 // send test string to the accessory
 - (IBAction)sendString:(id)sender;
@@ -159,14 +164,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //get singleton instance of M2x Class
+    M2x* m2x = [M2x shared];
+    //set the Master Api Key
+    m2x.api_key = @"1a08ccc1f387096e8774946cc88a24e9";
+    
+    self.feedsClient = [[FeedsClient alloc] init];
+    [_feedsClient setFeed_key:@"1a08ccc1f387096e8774946cc88a24e9"];
+
     [self initializeTransmitters];
     [self initializeVisitManager];
+    [self postState];
 }
 
 - (void)viewDidUnload
 {
     [self cleanupVisitManager];
     [super viewDidUnload];
+    self.feedsClient = nil;
     self.receivedBytesLabel = nil;
     self.stringToSendTextField = nil;
     self.hexToSendTextField = nil;
@@ -252,6 +267,63 @@
     @synchronized(self.transmitters){
         if (self.transmitters == nil) {
             self.transmitters = [NSMutableArray new];
+
+            Transmitter *transmitter1 = [[Transmitter alloc] init];
+            transmitter1.name = @"Beacon 1";
+            transmitter1.identifier = @"XUX6-T6AYT";
+            [self.transmitters addObject:transmitter1];
+            Transmitter *transmitter2 = [[Transmitter alloc] init];
+            transmitter2.name = @"Beacon 2";
+            transmitter2.identifier = @"1A42-Y64X2";
+            [self.transmitters addObject:transmitter2];
+            Transmitter *transmitter3 = [[Transmitter alloc] init];
+            transmitter3.name = @"Beacon 3";
+            transmitter3.identifier = @"5VQ2-FWPVN";
+            [self.transmitters addObject:transmitter3];
+            Transmitter *transmitter4 = [[Transmitter alloc] init];
+            transmitter4.name = @"Beacon 4";
+            transmitter4.identifier = @"ESCG-TYUUQ";
+            [self.transmitters addObject:transmitter4];
+            Transmitter *transmitter5 = [[Transmitter alloc] init];
+            transmitter5.name = @"Beacon 5";
+            transmitter5.identifier = @"ZJ8B-1H18V";
+            [self.transmitters addObject:transmitter5];
+            Transmitter *transmitter6 = [[Transmitter alloc] init];
+            transmitter6.name = @"Beacon 6";
+            transmitter6.identifier = @"9JJu-2J4MV";
+            [self.transmitters addObject:transmitter6];
+            Transmitter *transmitter7 = [[Transmitter alloc] init];
+            transmitter7.name = @"Beacon 7";
+            transmitter7.identifier = @"391U-HXT3V";
+            [self.transmitters addObject:transmitter7];
+            Transmitter *transmitter8 = [[Transmitter alloc] init];
+            transmitter8.name = @"Beacon 8";
+            transmitter8.identifier = @"M1F2-J4N4P";
+            [self.transmitters addObject:transmitter8];
+            Transmitter *transmitter9 = [[Transmitter alloc] init];
+            transmitter9.name = @"Beacon 9";
+            transmitter9.identifier = @"J7WC-8GQY3";
+            [self.transmitters addObject:transmitter9];
+            Transmitter *transmitter10 = [[Transmitter alloc] init];
+            transmitter10.name = @"Beacon 10";
+            transmitter10.identifier = @"BQ6J-XJZKH";
+            [self.transmitters addObject:transmitter10];
+            Transmitter *transmitter11 = [[Transmitter alloc] init];
+            transmitter11.name = @"Beacon 11";
+            transmitter11.identifier = @"TGAT-6RRT1";
+            [self.transmitters addObject:transmitter11];
+            Transmitter *transmitter12 = [[Transmitter alloc] init];
+            transmitter12.name = @"Beacon 12";
+            transmitter12.identifier = @"4BYY-37RB1";
+            [self.transmitters addObject:transmitter12];
+            Transmitter *transmitter13 = [[Transmitter alloc] init];
+            transmitter13.name = @"Beacon 13";
+            transmitter13.identifier = @"83FP-AKW7Y";
+            [self.transmitters addObject:transmitter13];
+            Transmitter *transmitter14 = [[Transmitter alloc] init];
+            transmitter14.name = @"Beacon 14";
+            transmitter14.identifier = @"YXP8-R5URM";
+            [self.transmitters addObject:transmitter14];
         }
         // Always reload the table (even if the transmitter list didn't change)
     }
@@ -260,14 +332,6 @@
 - (void)clearTransmitters {
     @synchronized(self.transmitters){
         [self.transmitters removeAllObjects];
-    }
-}
-
-- (void)removeTransmitter: (Transmitter*)transmitter {
-    NSInteger count = 0;
-    @synchronized(self.transmitters){
-        [self.transmitters removeObject:transmitter];
-        count =[self.transmitters count];
     }
 }
 
@@ -289,8 +353,8 @@
 }
 
 - (void)updateTransmitter:(Transmitter *)transmitter withVisit:(FYXVisit *)visit RSSI:(NSNumber *)rssi {
-    transmitter.previousRSSI = transmitter.rssi;
-    transmitter.rssi = rssi;
+    transmitter.previousRSSI = [transmitter getRssi];
+    [transmitter addRSSI:rssi];
     transmitter.batteryLevel = visit.transmitter.battery;
     transmitter.temperature = visit.transmitter.temperature;
 }
@@ -303,13 +367,11 @@
 
 - (void)didDepart:(FYXVisit *)visit {
     NSLog(@"############## didDepart: %@", visit);
-    Transmitter *transmitter = [self transmitterForID:visit.transmitter.identifier];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.transmitters indexOfObject:transmitter] inSection:0];
 }
 
 - (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI {
-    NSLog(@"############## receivedSighting: %@", visit);
-
+//    NSLog(@"############## receivedSighting: %@", visit);
+    @synchronized(self.transmitters) {
     Transmitter *transmitter = [self transmitterForID:visit.transmitter.identifier];
     if (!transmitter) {
         NSString *transmitterName = visit.transmitter.identifier;
@@ -320,14 +382,60 @@
         transmitter.identifier = visit.transmitter.identifier;
         transmitter.name = transmitterName;
         transmitter.lastSighted = [NSDate dateWithTimeIntervalSince1970:0];
-        transmitter.rssi = [NSNumber numberWithInt:-100];
-        transmitter.previousRSSI = transmitter.rssi;
+        [transmitter addRSSI:[NSNumber numberWithInt:-100]];
+        transmitter.previousRSSI = [transmitter getRssi];
         transmitter.batteryLevel = 0;
         transmitter.temperature = 0;
         [self addTransmitter:transmitter];
+    } else {
+        transmitter.previousRSSI = [transmitter getRssi];
+        [transmitter addRSSI:RSSI];
+//        NSLog(@"RSSI: %@", RSSI);
+        NSLog(@"name: %@ rssi: %@", transmitter.name, [transmitter getRssi]);
+
+        if ([transmitter getRssi] > [NSNumber numberWithInt:-40] && [transmitter.dirty isEqualToNumber:[NSNumber numberWithBool:NO]]) {
+            transmitter.dirty = [NSNumber numberWithBool:YES];
+        } else if ([transmitter getRssi] < [NSNumber numberWithInt:-70] && [transmitter.dirty isEqualToNumber:[NSNumber numberWithBool:YES]]){
+            transmitter.dirty = [NSNumber numberWithBool:NO];
+        }
     }
 
     transmitter.lastSighted = updateTime;
+    }
+}
+
+- (void)postState {
+    [self performSelectorOnMainThread:@selector(postStateOnThread) withObject:nil waitUntilDone:NO];
+}
+
+- (void)postStateOnThread {
+    @synchronized(self.transmitters){
+        if (!self.transmitters || [self.transmitters count] <= 0) {
+            [self performSelector:@selector(postState) withObject:nil afterDelay:2];
+            return;
+        }
+        for (Transmitter *transmitter in self.transmitters) {
+            NSDictionary *innerDict = [NSDictionary dictionaryWithObject:[transmitter.dirty copy] forKey:@"value"];
+            NSString *streamName = [transmitter.name copy];
+            NSString *streamName2 = [streamName lowercaseString];
+            NSString *streamName3 = [streamName2 stringByReplacingOccurrencesOfString:@" " withString:@""];
+            NSArray *array = [NSArray arrayWithObjects:innerDict, nil];
+            NSDictionary *dict = [NSDictionary dictionaryWithObject:array forKey:@"values"];
+            NSLog(@"posting %@ dirty: %@", transmitter.name, transmitter.dirty);
+            [_feedsClient postDataValues:dict
+                               forStream:streamName3
+                                  inFeed:@"aa339e4f6f75c439e40274b986071d80"
+                                 success:^(id object) { /*NSLog(@"post state success");*/ }
+                                 failure:^(NSError *error, NSDictionary *message)
+             {
+                 //NSLog(@"Error: %@",[error localizedDescription]);
+                 //NSLog(@"Message: %@",message);
+             }];
+        }
+    }
+
+    //    NSDictionary *newValue = @{ @"values": @[ @{ @"value": @"Beacon 1" }, @{ @ ] };
+    [self performSelector:@selector(postState) withObject:nil afterDelay:2];
 }
 
 @end

@@ -18,7 +18,12 @@
  */
 #import <Foundation/Foundation.h>
 
-@interface Transmitter : NSObject
+@interface Transmitter : NSObject {
+    NSMutableArray *votes;
+}
+
+- (void)addRSSI:(NSNumber *)rssi;
+- (NSNumber *)getRssi;
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *identifier;
@@ -27,5 +32,6 @@
 @property (nonatomic, strong) NSDate *lastSighted;
 @property (nonatomic, strong) NSNumber *batteryLevel;
 @property (nonatomic, strong) NSNumber *temperature;
+@property (nonatomic, strong) NSNumber *dirty;
 
 @end

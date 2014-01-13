@@ -67,6 +67,8 @@
 // UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 
+- (void)postState;
+
 @property(nonatomic, strong) IBOutlet UILabel *receivedBytesLabel;
 @property(nonatomic, strong) IBOutlet UITextField *stringToSendTextField;
 @property(nonatomic, strong) IBOutlet UITextField *hexToSendTextField;

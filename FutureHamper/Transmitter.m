@@ -20,4 +20,27 @@
 
 @implementation Transmitter
 
+- (id)init {
+    self = [super init];
+    self.dirty = [NSNumber numberWithBool:NO];
+    votes = [[NSMutableArray alloc] initWithCapacity:100];
+    return self;
+}
+
+- (void)addRSSI:(NSNumber *)rssi {
+    if ([votes count] == 25) {
+        [votes removeObjectAtIndex:0];
+    }
+    [votes addObject:rssi];
+}
+
+- (NSNumber *)getRssi {
+    int sum = 0;
+    for (NSNumber *number in votes) {
+        sum += [number integerValue];
+    }
+
+    return [NSNumber numberWithFloat:((float)sum / (float)[votes count])];
+}
+
 @end
