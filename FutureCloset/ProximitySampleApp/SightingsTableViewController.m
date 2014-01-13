@@ -31,8 +31,12 @@
 #import "ViewController.h"
 #import "ClothingDetailViewController.h"
 #import "LaundryStatusViewController.h"
+#import "M2x.h"
+#import "FeedsClient.h"
 
-@interface SightingsTableViewController ()
+@interface SightingsTableViewController () {
+    FeedsClient *feedClient;
+}
 
 @property (strong, nonatomic) NSMutableArray *transmitters;
 @property (nonatomic) FYXVisitManager *visitManager;
@@ -47,7 +51,13 @@
     [super viewDidLoad];
     
     
-
+    //get singleton instance of M2x Class
+    M2x* m2x = [M2x shared];
+    //set the Master Api Key
+    m2x.api_key = @"1a08ccc1f387096e8774946cc88a24e9";
+    
+    feedClient = [[FeedsClient alloc] init];
+    [feedClient setFeed_key:@"1a08ccc1f387096e8774946cc88a24e9"];
 
     
     // Create the animated spinner view
@@ -70,6 +80,7 @@
     [self finalizeUITheming];
     [self initializeTransmitters];
     [self initializeVisitManager];
+    [self checkDirtyStatus];
 }
 
 - (void)viewDidUnload {
@@ -118,8 +129,11 @@
     //[self.navigationController.navigationBar setTranslucent:NO];
     
     // Replace the nav bar's title text with a custom image view
-    //UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_binoculars.png"]];
-    //[self.navigationController.navigationBar.topItem setTitleView:imageView];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FTZlogo.png"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.navigationController.navigationBar.topItem setTitleView:imageView];
+    imageView.frame = CGRectMake(0, 0, 233, 24);
+    
     self.title = @"FutureThreadz";
     
     self.navigationController.toolbarHidden = false;
@@ -199,6 +213,7 @@
             CGRect oldFrame = sightingsCell.rssiImageView.frame;
             sightingsCell.rssiImageView.frame = CGRectMake(oldFrame.origin.x, oldFrame.origin.y, 0, oldFrame.size.height);
             sightingsCell.isGrayedOut = YES;
+            sightingsCell.lastWornLabel.text = @"DIRTY";
         });
     }
 }
@@ -353,13 +368,20 @@
         // Update the transmitter text
         cell.transmitterNameLabel.text = cloth.name;
         cell.transmitterIcon.image = cloth.picture;
+        cell.lastWornLabel.text = [NSString stringWithFormat:@"Last Worn: %@", cloth.lastWornDate];
+        if(cloth.numberFriendsWearing > 0) {
+            cell.friendsWearingLabel.textColor = [UIColor redColor];
+        } else {
+            cell.friendsWearingLabel.textColor = [UIColor lightGrayColor];
+        }
+        cell.friendsWearingLabel.text = [NSString stringWithFormat:@"%d friends wearing", cloth.numberFriendsWearing];
         
         // Update the transmitter avatar (icon image)
         NSInteger avatarID = [UserSettingsRepository getAvatarIDForTransmitterID:transmitter.identifier];
         NSString *imageFilename = [NSString stringWithFormat:@"avatar_%02d.png", avatarID];
         //cell.transmitterIcon.image = [UIImage imageNamed:imageFilename];
         
-        if ([self isTransmitterAgedOut:transmitter]) {
+        if (cloth.dirty) {
             [self grayOutSightingsCell:cell];
         } else {
             [self updateSightingsCell:cell withTransmitter:transmitter];
@@ -429,6 +451,13 @@
         [self.tableView reloadData];
     }
     
+    Clothing *clothes = nil;
+    for(Clothing *c in self.clothesArray) {
+        if(c.transmitter == transmitter) {
+            clothes = c;
+        }
+    }
+    
     transmitter.lastSighted = updateTime;
     if([self shouldUpdateTransmitterCell:visit withTransmitter:transmitter RSSI:RSSI]){
         [self updateTransmitter:transmitter withVisit:visit  RSSI:RSSI];
@@ -442,6 +471,11 @@
                 transmitter.previousRSSI =  [self rssiForBarWidth:[tempLayer frame].size.width];
                 
                 [self updateSightingsCell:sightingsCell withTransmitter:transmitter];
+                if (clothes.dirty) {
+                    [self grayOutSightingsCell:sightingsCell];
+                } else {
+                    [self updateSightingsCell:sightingsCell withTransmitter:transmitter];
+                }
             }
         }
     }
@@ -457,6 +491,42 @@
 -(IBAction)laundryStatusPressed:(id)sender {
     LaundryStatusViewController *controller = [[LaundryStatusViewController alloc] initWithNibName:@"LaundryStatusViewController" bundle:nil];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)checkDirtyStatus {
+    
+    [feedClient listDataStreamsForFeedId:@"aa339e4f6f75c439e40274b986071d80" success:^(id object) {
+        NSLog(@"Got Data Streams: %@", object);
+        
+        NSArray *array = [object objectForKey:@"streams"];
+        for(NSDictionary *dict in array) {
+            NSString *name = [dict objectForKey:@"name"];
+            Clothing *cloth = [self getClothingForLowercaseBeacon:name];
+            bool dirty = [[dict objectForKey:@"value"] integerValue];
+            cloth.dirty = dirty;
+        }
+        [self.tableView reloadData];
+        
+        [self performSelector:@selector(checkDirtyStatus) withObject:nil afterDelay:2.0];
+    }
+                                 failure:^(NSError *error, NSDictionary *message) {
+        NSLog(@"Error: %@",[error localizedDescription]);
+        NSLog(@"Message: %@",message);
+                                     [self performSelector:@selector(checkDirtyStatus) withObject:nil afterDelay:2.0];
+        
+    } ];
+    
+}
+
+-(Clothing*)getClothingForLowercaseBeacon:(NSString*)name {
+    for(Clothing *cloth in self.clothesArray) {
+        NSString *lowername = [cloth.transmitter.name lowercaseString];
+        NSString *noSpace = [lowername stringByReplacingOccurrencesOfString:@" " withString:@""];
+        if([noSpace isEqualToString:name]) {
+            return cloth;
+        }
+    }
+    return nil;
 }
 
 

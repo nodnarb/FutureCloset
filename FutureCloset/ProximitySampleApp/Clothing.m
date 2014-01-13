@@ -121,6 +121,7 @@ static NSMutableArray *theClothes = nil;
         self.lastWornDate = @"Jan 02, 2014";
         self.numberFriendsWearing = 0;
         [self setDefaultsForType:TShirt];
+        self.dirty = YES;
     }
     
     if([transmitter.name isEqualToString:@"Beacon 2"]) {
@@ -136,7 +137,7 @@ static NSMutableArray *theClothes = nil;
         self.color = Black;
         self.lastWornDate = @"Jan 05, 2014";
         self.numberFriendsWearing = 0;
-        [self setDefaultsForType:T-Shirt];
+        [self setDefaultsForType:TShirt];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 4"]) {
@@ -144,7 +145,7 @@ static NSMutableArray *theClothes = nil;
         self.color = Green;
         self.lastWornDate = @"Dec 25, 2013";
         self.numberFriendsWearing = 3;
-        [self setDefaultsForType:Sweater]
+        [self setDefaultsForType:Sweater];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 5"]) {
@@ -156,19 +157,19 @@ static NSMutableArray *theClothes = nil;
     }
 
     if([transmitter.name isEqualToString:@"Beacon 6"]) {
-        self.name = @"Pokemon Master Hat";
-        self.color = Red;
+        self.name = @"Ratty Shirt";
+        self.color = Orange;
         self.lastWornDate = @"Dec 12, 2013";
         self.numberFriendsWearing = 0;
-        [self setDefaultsForType:Accessory];
+        [self setDefaultsForType:TShirt];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 7"]) {
-        self.name = @"Ratty Shirt";
-        self.color = Orange;
+        self.name = @"Pokemon Master Hat";
+        self.color = Red;
         self.lastWornDate = @"Dec 02, 2013";
         self.numberFriendsWearing = 0;
-        [self setDefaultsForType:TShirt];
+        [self setDefaultsForType:Accessory];
     }
 
     if([transmitter.name isEqualToString:@"Beacon 8"]) {

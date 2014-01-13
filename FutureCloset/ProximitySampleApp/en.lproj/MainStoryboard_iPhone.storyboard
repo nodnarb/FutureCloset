@@ -195,16 +195,9 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="oXd-De-bWG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="G27-1U-gA1">
-                            <connections>
-                                <action selector="refreshButtonClicked:" destination="BzN-KH-Uk9" id="a27-4y-ntT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="oXd-De-bWG"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="refreshBarButton" destination="G27-1U-gA1" id="cBw-Yh-BeG"/>
                         <segue destination="2" kind="modal" identifier="push_to_enable_view" id="5Ji-r8-1Re"/>
                     </connections>
                 </tableViewController>
